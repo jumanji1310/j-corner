@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "./Chevron";
 type Video = {
   id: string;
   title: string;
+  date: string;
   url: string;
   thumbnail?: string;
 };
@@ -25,19 +26,10 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
   };
 
   const prevVideo = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + videos.length) % videos.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + videos.length) % videos.length
+    );
     setIsPlaying(false);
-  };
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
   };
 
   // Reset video state when changing videos
@@ -64,41 +56,50 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
 
       {/* Navigation controls */}
       <div className="flex items-center justify-between mt-4">
-        <button 
+        <button
           onClick={prevVideo}
           className="p-3 rounded-full bg-black text-white hover:bg-gray-400"
           aria-label="Previous video"
         >
-          <ChevronLeft/>
+          <ChevronLeft />
         </button>
 
-        <h3 className="text-lg font-medium">{videos[currentIndex].title}</h3>
+        <h3 className="text-lg font-medium">
+          {videos[currentIndex].title} ({videos[currentIndex].date})
+        </h3>
 
-        <button 
+        <button
           onClick={nextVideo}
           className="p-3 rounded-full bg-black text-white hover:bg-gray-400"
           aria-label="Next video"
         >
-          <ChevronRight/>
+          <ChevronRight />
         </button>
       </div>
 
       {/* Video thumbnails */}
       <div className="mt-4 flex space-x-2 overflow-x-auto pb-2">
         {videos.map((video, index) => (
-          <div 
+          <div
             key={video.id}
             onClick={() => setCurrentIndex(index)}
-            className={`relative flex-shrink-0 w-24 h-16 cursor-pointer rounded overflow-hidden ${
-              index === currentIndex ? 'ring-2 ring-blue-500' : ''
+            className={`relative flex-shrink-0 w-34 h-20 cursor-pointer rounded overflow-hidden ${
+              index === currentIndex ? "ring-2 ring-blue-500" : ""
             }`}
           >
             {video.thumbnail ? (
-              <img 
-                src={video.thumbnail} 
-                alt={video.title} 
-                className="w-full h-full object-cover"
-              />
+              <div className="relative group w-full h-full">
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+                  <p className="text-white text-sm font-medium px-2 text-center">
+                    {video.title}
+                  </p>
+                </div>
+              </div>
             ) : (
               <div className="w-full h-full bg-gray-700 flex items-center justify-center text-white text-xs">
                 {video.title}
