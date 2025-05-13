@@ -2,20 +2,26 @@
 
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "./Chevron";
+import Thumbnail from "@/components/VideoThumbnail";
 
 type Video = {
   id: string;
   title: string;
   date: string;
   url: string;
-  thumbnail?: string;
+  thumbnail: string;
 };
 
 interface VideoCarouselProps {
   videos: Video[];
 }
 
-type SortOption = "default" | "title-asc" | "title-desc" | "date-asc" | "date-desc";
+type SortOption =
+  | "default"
+  | "title-asc"
+  | "title-desc"
+  | "date-asc"
+  | "date-desc";
 
 export default function VideoCarousel({ videos }: VideoCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,14 +38,14 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
     );
   };
 
-    // Toggle sort function
-    const toggleSort = (type: "title" | "date") => {
-      setSortBy((current) => {
-        if (current === `${type}-asc`) return `${type}-desc` as SortOption;
-        if (current === `${type}-desc`) return `${type}-asc` as SortOption;
-        return `${type}-asc` as SortOption;
-      });
-    };
+  // Toggle sort function
+  const toggleSort = (type: "title" | "date") => {
+    setSortBy((current) => {
+      if (current === `${type}-asc`) return `${type}-desc` as SortOption;
+      if (current === `${type}-desc`) return `${type}-asc` as SortOption;
+      return `${type}-asc` as SortOption;
+    });
+  };
 
   // Reset video state when changing videos
   useEffect(() => {
@@ -70,7 +76,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
   const sortedVideos = getSortedVideos();
   const currentVideo = sortedVideos[currentIndex];
 
- return (
+  return (
     <div className="relative w-full max-w-4xl mx-auto">
       {/* Video container */}
       <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
@@ -106,7 +112,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
           <ChevronRight />
         </button>
       </div>
-      
+
       {/* Sort controls with indicators */}
       <div className="mt-4 mb-2 flex items-center space-x-2">
         <span className="text-sm font-medium">Sort by:</span>
@@ -147,39 +153,28 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
           </button>
         </div>
       </div>
-      
+
       {/* Video thumbnails */}
-      <div className="mt-4 flex space-x-2 overflow-x-auto p-5">
+      <div className="mt-4 flex space-x-2 w-34 h-20overflow-x-auto p-5">
         {sortedVideos.map((video) => (
-          <div
-            key={video.id}
-            onClick={() => {
-              // Find the index of this video in the sorted array
-              const newIndex = sortedVideos.findIndex(v => v.id === video.id);
-              setCurrentIndex(newIndex);
-            }}
-            className={`relative flex-shrink-0 w-34 h-20 cursor-pointer rounded overflow-hidden ${
-              video.id === currentVideo?.id ? "ring-5 ring-blue-500" : ""
-            }`}
-          >
-            {video.thumbnail ? (
-              <div className="relative group w-full h-full">
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
-                  <p className="text-white text-sm font-medium px-2 text-center">
-                    {video.title}
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center text-white text-xs">
-                {video.title}
-              </div>
-            )}
+          <div key={video.id} className="flex flex-col items-center mb-2">
+            <div
+              onClick={() => {
+                // Find the index of this video in the sorted array
+                const newIndex = sortedVideos.findIndex(
+                  (v) => v.id === video.id
+                );
+                setCurrentIndex(newIndex);
+              }}
+              className={`relative flex-shrink-0 w-34 h-20 cursor-pointer rounded overflow-hidden ${
+                video.id === currentVideo?.id ? "ring-5 ring-blue-500" : ""
+              }`}
+            >
+              <Thumbnail url={video.thumbnail} />
+            </div>
+            <p className="text-xs mt-1 truncate w-34 text-center">
+              {video.title || "Untitled"}
+            </p>
           </div>
         ))}
       </div>

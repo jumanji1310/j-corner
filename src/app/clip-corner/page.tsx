@@ -18,9 +18,9 @@ export default function ClipCornerPage() {
     title: string;
     date: string;
     url: string;
-    thumbnail?: string;
+    thumbnail: string;
   }
-  
+
   useEffect(() => {
     fetch("https://video-worker.ngjunjie13.workers.dev/list")
       .then((res) => {
@@ -39,7 +39,7 @@ export default function ClipCornerPage() {
               .replace(/\.mp4$/, "")
               .replace(/_/g, " ")
               .replace(/^\w/, (c: string) => c.toUpperCase()),
-            thumbnail: "", // Add a default thumbnail or modify as needed
+            thumbnail: `https://pub-8988b870abc545d5a220580864500877.r2.dev/${video.key}`, // Add a default thumbnail or modify as needed
             date: new Date(video.uploaded).toLocaleString(),
           };
         });
