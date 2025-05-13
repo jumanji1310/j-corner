@@ -77,7 +77,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
   const currentVideo = sortedVideos[currentIndex];
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full max-w-5xl mx-auto">
       {/* Video container */}
       <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
         <video
@@ -155,9 +155,9 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
       </div>
 
       {/* Video thumbnails */}
-      <div className="mt-4 flex space-x-2 w-34 h-20overflow-x-auto p-5">
+      <div className="mt-4 h-60 grid grid-cols-6 overflow-y-scroll p-5">
         {sortedVideos.map((video) => (
-          <div key={video.id} className="flex flex-col items-center mb-2">
+          <div key={video.id} className="grid place-items-center mb-2">
             <div
               onClick={() => {
                 // Find the index of this video in the sorted array
@@ -166,7 +166,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
                 );
                 setCurrentIndex(newIndex);
               }}
-              className={`relative flex-shrink-0 w-34 h-20 cursor-pointer rounded overflow-hidden ${
+              className={`relative w-34 h-20 cursor-pointer rounded overflow-hidden ${
                 video.id === currentVideo?.id ? "ring-5 ring-blue-500" : ""
               }`}
             >
