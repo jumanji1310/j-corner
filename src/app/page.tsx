@@ -1,6 +1,5 @@
 "use client";
 
-import GridExample from "@/components/GridExample";
 import { useState, useEffect } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 
@@ -26,7 +25,6 @@ export default function HomePage() {
       ) : (
         <div>
           <h1>Welcome to J-Corner</h1>
-          <GridExample />
         </div>
       )}
     </>
