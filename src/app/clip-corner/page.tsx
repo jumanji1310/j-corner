@@ -1,7 +1,7 @@
 "use client";
 
 import LoadingScreen from "@/components/LoadingScreen";
-import VideoCarousel from "@/components/VideoCarousel";
+import VideoPage from "@/components/video/VideoPage";
 import { useEffect, useState } from "react";
 
 export default function ClipCornerPage() {
@@ -53,13 +53,9 @@ export default function ClipCornerPage() {
       });
   }, []);
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      {isLoading ? (
-        <LoadingScreen message="Loading videos..." />
+  return isLoading ? (
+    <LoadingScreen src="/Loading.gif" />
       ) : (
-        <VideoCarousel videos={videos} />
-      )}
-    </div>
+    <VideoPage videos={videos} />
   );
 }
