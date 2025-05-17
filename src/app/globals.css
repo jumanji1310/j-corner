@@ -2,6 +2,19 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-text: rgb(223, 233, 241);
+  --color-background: rgb(7, 16, 23);
+  --color-primary: rgb(17, 86, 148);
+  --color-secondary: rgb(144, 190, 232);
+  --color-accent: rgb(57, 157, 247);
+
+  --color-dark-text: rgb(14, 13, 13);
+  --color-dark-background: rgb(252, 250, 251);
+  --color-dark-primary: rgb(254, 166, 213);
+  --color-dark-secondary: rgb(232, 145, 191);
+  --color-dark-accent: rgb(240, 68, 160);
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
