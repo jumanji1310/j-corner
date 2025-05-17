@@ -1,4 +1,3 @@
-import Cube from "@/components/cube/AnimCube";
 import OLL from "@/components/cube/OllSection";
 /* eslint-disable react/no-unescaped-entities */
 const CubingCornerPage = () => {

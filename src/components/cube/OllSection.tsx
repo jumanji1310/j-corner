@@ -1,4 +1,3 @@
-import Cube from "@/components/cube/AnimCube";
 import AlgoCard from "./AlgoCard";
 
 export default function OLL() {
