@@ -9,9 +9,9 @@ https://www.geeksforgeeks.org/how-to-create-a-chevron-using-tailwind-css/#chevro
 export function ChevronLeft() {
   return (
     <div
-      className="w-10 m-1 ml-2 border-white h-10 
+      className="w-10 m-1 ml-2 border-text dark:border-dark-text h-10 
                         border-l-10 border-b-10 transform 
-                        rotate-45 border-gray-800"
+                        rotate-45"
     ></div>
   );
 }
@@ -19,9 +19,9 @@ export function ChevronLeft() {
 export function ChevronRight() {
   return (
     <div
-      className="w-10 m-1 mr-2 border-white h-10 
+      className="w-10 m-1 mr-2 border-text dark:border-dark-text h-10 
                         border-t-10 border-r-10 
-                        transform rotate-45 border-gray-800"
+                        transform rotate-45"
     ></div>
   );
 }

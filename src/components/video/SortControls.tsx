@@ -6,17 +6,21 @@ interface SortControlsProps {
   onToggleSort: (type: "title" | "date") => void;
 }
 
-export default function SortControls({ sortBy, onSortDefault, onToggleSort }: SortControlsProps) {
+export default function SortControls({
+  sortBy,
+  onSortDefault,
+  onToggleSort,
+}: SortControlsProps) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-sm font-medium text-gray-300">Sort:</span>
+    <div className="flex items-center gap-3 text-text dark:text-dark-text">
+      <span className="text-sm font-medium">Sort:</span>
 
       <div className="flex gap-2 flex-grow">
         <button
           className={`px-3 py-1.5 text-xs rounded-md ${
             sortBy === "default"
-              ? "bg-indigo-600 text-white hover:bg-indigo-500"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white"
+              ? "bg-accent dark:bg-dark-accent"
+              : "bg-primary dark:bg-dark-primary hover:bg-accent dark:hover:bg-dark-accent"
           }`}
           onClick={onSortDefault}
         >
@@ -25,8 +29,8 @@ export default function SortControls({ sortBy, onSortDefault, onToggleSort }: So
         <button
           className={`px-3 py-1.5 text-xs rounded-md text-center ${
             sortBy.startsWith("title")
-              ? "bg-indigo-600 text-white hover:bg-indigo-500"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white"
+              ? "bg-accent dark:bg-dark-accent"
+              : "bg-primary dark:bg-dark-primary hover:bg-accent dark:hover:bg-dark-accent"
           }`}
           onClick={() => onToggleSort("title")}
         >
@@ -36,8 +40,8 @@ export default function SortControls({ sortBy, onSortDefault, onToggleSort }: So
         <button
           className={`px-3 py-1.5 text-xs rounded-md text-center ${
             sortBy.startsWith("date")
-              ? "bg-indigo-600 text-white hover:bg-indigo-500"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white"
+              ? "bg-accent dark:bg-dark-accent"
+              : "bg-primary dark:bg-dark-primary hover:bg-accent dark:hover:bg-dark-accent"
           }`}
           onClick={() => onToggleSort("date")}
         >
