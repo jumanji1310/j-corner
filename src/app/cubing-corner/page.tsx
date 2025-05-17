@@ -1,14 +1,10 @@
-import Cube from "@/components/AnimCube";
+import Cube from "@/components/cube/AnimCube";
+import OLL from "@/components/cube/OllSection";
 /* eslint-disable react/no-unescaped-entities */
 const CubingCornerPage = () => {
   return (
-    <div className="p-5">
-<div className="flex flex-wrap gap-4">
-    <div>
-        <h3>Sune Algorithm (R U R' U R U2 R')</h3>
-        <Cube moves="R U R' U R U2 R'"/>
-    </div>
-</div>
+    <div className="p-5 bg-background dark:bg-dark-background text-text dark:text-dark-text">
+            <OLL />
       <h1>How to Solve a Rubik's Cube</h1>
       <p>
         Welcome to the Cubing Corner! Follow this step-by-step guide to solve a

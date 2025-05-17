@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useTheme } from "@/components/ThemeProvider";
 
 // Declare the global AnimCube3 function for TypeScript
 declare global {
@@ -8,17 +9,7 @@ declare global {
   }
 }
 
-interface AnimCubeProps {
-  config: string;
-  width?: number;
-  height?: number;
-}
-
-export function AnimCube({
-  config,
-  width = 400, // Fixed width to 400px
-  height = 400, // Fixed height to 400px
-}: AnimCubeProps) {
+export function AnimCube({ config }: { config: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Load the AnimCube3.js script
@@ -46,27 +37,22 @@ export function AnimCube({
     };
   }, [config]);
 
-  return (
-    <div
-      ref={containerRef}
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-      }}
-    />
-  );
+  return <div ref={containerRef} className="w-full h-full" />;
 }
 
 export default function Cube({ moves }: { moves: string }) {
-  // Base config string with placeholder for moves
-  const baseConfig = "buttonheight=25&repeat=0&edit=0&move=MOVES_PLACEHOLDER&sign=1&initrevmove=#&textsize=36&gabbacolors=1";
+  // Base config strings for different themes
+  const lightConfig = "bgcolor=0a1e30&buttonheight=25&repeat=0&edit=0&move=MOVES_PLACEHOLDER&sign=1&initrevmove=#&textsize=36&gabbacolors=1";
+  const darkConfig = "bgcolor=fee9f4&buttonheight=25&repeat=0&edit=0&move=MOVES_PLACEHOLDER&sign=1&initrevmove=#&textsize=36&gabbacolors=1";
+  
+  // Use the theme hook instead of direct localStorage access
+  const { isDarkMode } = useTheme();
+  
+  // Select config based on theme
+  const baseConfig = isDarkMode ? darkConfig: lightConfig;
   
   // Replace the placeholder with actual moves
   const configString = baseConfig.replace("MOVES_PLACEHOLDER", moves);
 
-  return (
-    <div>
-      <AnimCube config={configString} />
-    </div>
-  );
+  return <AnimCube config={configString} />;
 }

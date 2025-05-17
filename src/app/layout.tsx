@@ -11,15 +11,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-moderustic">
       <head>
-        <Script 
-          src="/AnimCube3.js"
-          strategy="beforeInteractive" 
-        />
+        <Script src="/AnimCube3.js" strategy="beforeInteractive" />
       </head>
       <body>
         <ThemeProvider>
-        <NavBar />
-        {children}
+          <NavBar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
