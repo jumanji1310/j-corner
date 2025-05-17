@@ -1,6 +1,6 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar"; // Adjust the path based on your project structure
-import { Lato, Inter } from 'next/font/google';
+import { Lato } from 'next/font/google';
 
 // Initialize the font
 const font = Lato({
