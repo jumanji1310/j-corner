@@ -1,6 +1,7 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar"; // Adjust the path based on your project structure
 import Script from "next/script";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export default function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <ThemeProvider>
         <NavBar />
         {children}
       </body>
