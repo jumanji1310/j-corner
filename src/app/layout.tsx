@@ -7,7 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-        <html lang="en" className="font-moderustic">
+    <html lang="en" className="font-moderustic">
+      <head>
+        <script src="AnimCube3.js"></script>
+      </head>
       <body>
         <NavBar />
         {children}
