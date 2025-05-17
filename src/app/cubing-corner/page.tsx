@@ -1,4 +1,4 @@
-import Cube, { AnimCube } from "./AnimCube";
+import Cube from "@/components/AnimCube";
 /* eslint-disable react/no-unescaped-entities */
 const CubingCornerPage = () => {
   return (
