@@ -3,28 +3,41 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="bg-primary dark:bg-dark-primary py-6 px-8 shadow-lg flex justify-between text-text dark:text-dark-text text-2xl">
+    <nav className="bg-primary dark:bg-dark-primary py-2 px-8 shadow-lg flex justify-between text-text dark:text-dark-text text-2xl">
       <div className="max-w-7xl flex items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-baseline">
           <h1 className="text-3xl font-bold mr-10">J-Corner</h1>
           <ul className="flex space-x-8 font-medium">
             <li>
-              <Link href="/" className="hover:text-background dark:hover:text-dark-background">
+              <Link
+                href="/"
+                className="hover:text-background dark:hover:text-dark-background"
+              >
                 Home
               </Link>
             </li>
             <li>
               <Link
                 href="/clip-corner"
-                className="hover:text-background dark:hover:text-dark-background">
+                className="hover:text-background dark:hover:text-dark-background"
+              >
                 Clip Corner
               </Link>
             </li>
             <li>
               <Link
                 href="/cubing-corner"
-                className="hover:text-background dark:hover:text-dark-background">
+                className="hover:text-background dark:hover:text-dark-background"
+              >
                 Cubing Corner
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/music-corner"
+                className="hover:text-background dark:hover:text-dark-background"
+              >
+                Music Corner
               </Link>
             </li>
             <li className="relative group">
