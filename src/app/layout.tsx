@@ -1,12 +1,5 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar"; // Adjust the path based on your project structure
-import { Lato } from 'next/font/google';
-
-// Initialize the font
-const font = Lato({
-  weight: '400',
-  subsets: ['latin'],
-});
 
 export default function RootLayout({
   children,
@@ -14,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={font.className}>
+        <html lang="en" className="font-moderustic">
       <body>
         <NavBar />
         {children}

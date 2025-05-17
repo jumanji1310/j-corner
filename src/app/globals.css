@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -14,6 +15,8 @@
   --color-dark-primary: rgb(254, 166, 213);
   --color-dark-secondary: rgb(232, 145, 191);
   --color-dark-accent: rgb(240, 68, 160);
+
+  --font-moderustic: 'Moderustic', sans-serif;
 }
 :root {
   --background: #ffffff;

@@ -18,7 +18,7 @@ export default function VideoCard({ video, isSelected, onClick }: VideoCardProps
       >
         <Thumbnail url={video.thumbnail} onThumbnailLoad={()=>console.log('LOADED THUMBNAIL')}/>
       </div>
-      <p className="text-sm mt-1 truncate text-center">
+      <p className="text-base font-medium mt-1 truncate text-center">
         {video.title || "Untitled"}
       </p>
     </div>
