@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar"; // Adjust the path based on your project structure
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-moderustic">
       <head>
-        <script src="AnimCube3.js"></script>
+        <Script 
+          src="/AnimCube3.js"
+          strategy="beforeInteractive" 
+        />
       </head>
       <body>
         <NavBar />
