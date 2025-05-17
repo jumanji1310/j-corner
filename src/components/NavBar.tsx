@@ -3,45 +3,43 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-800 py-6 px-8 shadow-lg">
-      <div className="max-w-7xl  flex items-center justify-between">
+    <nav className="bg-primary dark:bg-dark-primary py-6 px-8 shadow-lg flex justify-between text-text dark:text-dark-text text-lg">
+      <div className="max-w-7xl flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-white mr-10">J-Corner</h1>
+          <h1 className="text-2xl font-bold mr-10">J-Corner</h1>
           <ul className="flex space-x-8">
             <li>
-              <Link href="/" className="text-lg text-white hover:text-indigo-300">
+              <Link href="/" className="hover:text-background dark:hover:text-dark-background">
                 Home
               </Link>
             </li>
             <li>
               <Link
                 href="/clip-corner"
-                className="text-lg text-white hover:text-indigo-300"
-              >
+                className="hover:text-background dark:hover:text-dark-background">
                 Clip Corner
               </Link>
             </li>
             <li>
               <Link
                 href="/cubing-corner"
-                className="text-lg text-white hover:text-indigo-300"
-              >
+                className="hover:text-background dark:hover:text-dark-background">
                 Cubing Corner
               </Link>
             </li>
             <li className="relative group">
-              <button className="text-lg text-white hover:text-indigo-300">
+              <button className="hover:text-background dark:hover:text-dark-background">
                 X-dles
               </button>
               {/* Add a minimal-height "bridge" element to connect the button and dropdown */}
               <div className="absolute h-2 w-full top-full"></div>
-              <ul className="absolute hidden group-hover:block bg-gray-700 text-white mt-2 rounded-lg shadow-xl z-50 min-w-[150px] border border-gray-600">
+              <ul className="absolute hidden group-hover:block bg-secondary dark:bg-dark-secondary mt-2 rounded-lg shadow-xl z-50">
                 <li>
                   <Link
                     href="https://www.nytimes.com/games/wordle/index.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-6 py-3 hover:bg-gray-600 rounded-t-lg"
+                    className="block px-6 py-3 hover:text-background dark:hover:text-dark-background rounded-t-lg"
                   >
                     Wordle
                   </Link>
@@ -51,7 +49,7 @@ export default function Navbar() {
                     href="https://loldle.net/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-6 py-3 hover:bg-gray-600"
+                    className="block px-6 py-3 hover:text-background dark:hover:text-dark-background"
                   >
                     Loldle
                   </Link>
@@ -61,7 +59,7 @@ export default function Navbar() {
                     href="https://www.britannica.com/games/octordle/daily"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-6 py-3 hover:bg-gray-600 rounded-b-lg"
+                    className="block px-6 py-3 hover:text-background dark:hover:text-dark-background rounded-b-lg"
                   >
                     Octordle
                   </Link>
