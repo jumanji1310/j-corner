@@ -1,9 +1,10 @@
-import OLL from "@/components/cube/OllSection";
+import OLL, {OLL2} from "@/components/cube/OllSection";
 /* eslint-disable react/no-unescaped-entities */
 const CubingCornerPage = () => {
   return (
     <div className="p-5 bg-background dark:bg-dark-background text-text dark:text-dark-text">
             <OLL />
+            <OLL2 />
       <h1>How to Solve a Rubik's Cube</h1>
       <p>
         Welcome to the Cubing Corner! Follow this step-by-step guide to solve a
