@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "next-themes";
 
 // Declare the global AnimCube3 function for TypeScript
 declare global {
@@ -46,10 +46,10 @@ export default function Cube({ moves }: { moves: string }) {
   const darkConfig = "bgcolor=fee9f4&slidercolor=0e0d0d&butbgcolor=fea6d5&troughcolor=fea6d5&";
   
   // Use the theme hook instead of direct localStorage access
-  const { isDarkMode } = useTheme();
+  const { theme } = useTheme();
   
   // Select config based on theme
-  const baseConfig = `${isDarkMode ? darkConfig: lightConfig}buttonheight=25&repeat=0&edit=0&move=MOVES_PLACEHOLDER&sign=1&initrevmove=#&textsize=36&gabbacolors=1`
+  const baseConfig = `${theme === "dark" ? darkConfig: lightConfig}buttonheight=25&repeat=0&edit=0&move=MOVES_PLACEHOLDER&sign=1&initrevmove=#&textsize=36&gabbacolors=1`
   
   // Replace the placeholder with actual moves
   const configString = baseConfig.replace("MOVES_PLACEHOLDER", moves);

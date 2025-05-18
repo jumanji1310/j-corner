@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="bg-primary dark:bg-dark-primary py-2 px-8 shadow-lg flex justify-between text-text dark:text-dark-text text-2xl">
+    <nav className="h-[10vh] bg-primary dark:bg-dark-primary py-2 px-8 shadow-lg flex justify-between items-center text-text dark:text-dark-text text-2xl">
       <div className="max-w-7xl flex items-center justify-between">
         <div className="flex items-baseline">
           <h1 className="text-3xl font-bold mr-10">J-Corner</h1>

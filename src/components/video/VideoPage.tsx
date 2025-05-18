@@ -67,7 +67,7 @@ export default function VideoPage({ videos }: VideoCarouselProps) {
     <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text px-6 pb-6">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 rounded-lg">
         {/* Left side - Video container */}
-        <div className="lg:col-span-2 flex flex-col h-[85vh]">
+        <div className="lg:col-span-2 flex flex-col h-[80vh]">
           <div className="relative bg-primary/20 dark:bg-dark-primary/20 rounded-lg overflow-hidden grow border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
             <video
               ref={videoRef}
@@ -90,7 +90,7 @@ export default function VideoPage({ videos }: VideoCarouselProps) {
           </div>
         </div>
         {/* Right side - Playlist and controls */}
-        <div className="lg:col-span-1 flex flex-col h-[85vh] ">
+        <div className="lg:col-span-1 flex flex-col h-[80vh] ">
           {/* Sort controls with indicators */}
           <div className="bg-primary/20 dark:bg-dark-primary/20 mb-4 p-4 rounded-lg border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
             <SortControls
