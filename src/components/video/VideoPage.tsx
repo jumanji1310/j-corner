@@ -64,7 +64,7 @@ export default function VideoPage({ videos }: VideoCarouselProps) {
   const currentVideo = sortedVideos[currentIndex];
 
   return (
-    <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text px-6 pb-6">
+    <div className="h-[90vh] bg-background dark:bg-dark-background text-text dark:text-dark-text px-6 pb-6">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 rounded-lg">
         {/* Left side - Video container */}
         <div className="lg:col-span-2 flex flex-col h-[80vh]">

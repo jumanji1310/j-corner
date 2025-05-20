@@ -40,7 +40,7 @@ export function AnimCube({ config }: { config: string }) {
   return <div ref={containerRef} className="w-full h-full" />;
 }
 
-export default function Cube({ moves, initMoves }: { moves: string, initMoves?: string }) {
+export default function Cube({ moves, initMoves, extraConfig="", customConfig }: { moves?: string, initMoves?: string, extraConfig?: string, customConfig?: string }) {
   // Base config strings for different themes
   const lightConfig = "bgcolor=0a1e30&slidercolor=dfe9f1&butbgcolor=135594&troughcolor=135594&";
   const darkConfig = "bgcolor=fee9f4&slidercolor=0e0d0d&butbgcolor=fea6d5&troughcolor=fea6d5&";
@@ -49,10 +49,8 @@ export default function Cube({ moves, initMoves }: { moves: string, initMoves?: 
   const { theme } = useTheme();
   
   // Select config based on theme
-  const baseConfig = `${theme === "dark" ? darkConfig: lightConfig}${initMoves ? `initmove=${initMoves}&` : ""}buttonheight=25&repeat=0&edit=0&move=MOVES_PLACEHOLDER&sign=1&initrevmove=#&textsize=36&gabbacolors=1&colorscheme=yw32o1`
+  const optionalConfig = `${theme === "dark" ? darkConfig: lightConfig}${initMoves ? `initmove=${initMoves}&` : ""}${extraConfig}${moves ? `move=${moves}&` : ""}`;
+  const baseConfig = "align=0&scale=3&buttonheight=25&repeat=0&edit=0&sign=1&initrevmove=#&textsize=36&gabbacolors=1&colorscheme=yw3201";
 
-  // Replace the placeholder with actual moves
-  const configString = baseConfig.replace("MOVES_PLACEHOLDER", moves);
-
-  return <AnimCube config={configString} />;
+  return <AnimCube config={customConfig ? optionalConfig + customConfig : optionalConfig + baseConfig} />;
 }
