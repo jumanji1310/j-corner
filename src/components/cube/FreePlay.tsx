@@ -29,7 +29,7 @@ export default function FreePlay() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row md:justify-evenly gap-6">
-        <div className="h-[60vh] w-[30vw] mx-auto">
+        <div className="h-[55vh] w-[30vw] mx-auto">
           <AnimCube config={config} />
         </div>
       </div>
