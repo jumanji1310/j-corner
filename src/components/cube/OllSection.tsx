@@ -2,7 +2,7 @@ import AlgoCard from "./AlgoCard";
 
 export default function OLL() {
   return (
-    <>
+    <div className="flex flex-col space-y-8 p-4">
       <h1 className="text-3xl font-bold text-center text-accent dark:text-dark-accent">
         Orientating final layer edges (OLL Part 1)
       </h1>
@@ -29,13 +29,6 @@ export default function OLL() {
           initMoves="R U2 R' U' R U R' U' R U' R'"
         />
       </div>
-    </>
-  );
-}
-
-export function OLL2() {
-  return (
-    <>
       <h1 className="text-3xl font-bold text-center text-accent dark:text-dark-accent">
         Orientating final layer corners (OLL Part 2)
       </h1>
@@ -102,6 +95,6 @@ export function OLL2() {
           extraConfig="hint=6&hinthoriz=2&hintborder=1&"
         />
       </div>
-    </>
+    </div>
   );
 }
