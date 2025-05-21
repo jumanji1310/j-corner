@@ -1,5 +1,6 @@
 import { AnimCube } from "./AnimCube";
 import { useTheme } from "next-themes";
+/* eslint-disable react/no-unescaped-entities */
 
 export default function FreePlay() {
   // Base config strings for different themes

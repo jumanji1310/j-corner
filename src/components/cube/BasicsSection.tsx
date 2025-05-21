@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 export default function Basics() {
   return (
     <div className="flex flex-col space-y-8 p-4">

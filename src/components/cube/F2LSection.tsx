@@ -1,4 +1,5 @@
 import AlgoCard from "./AlgoCard";
+/* eslint-disable react/no-unescaped-entities */
 
 export default function F2L() {
   return (
