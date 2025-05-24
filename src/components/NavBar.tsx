@@ -46,7 +46,7 @@ export default function Navbar() {
               </button>
               {/* Add a minimal-height "bridge" element to connect the button and dropdown */}
               <div className="absolute h-2 w-full top-full"></div>
-              <ul className="absolute hidden group-hover:block bg-primary dark:bg-dark-primary mt-2 rounded-lg shadow-xl z-50">
+              <ul className="absolute hidden group-hover:block bg-primary dark:bg-dark-primary mt-2 rounded-lg shadow-xl z-50 border border-secondary dark:border-dark-secondary">
                 <li>
                   <Link
                     href="https://www.nytimes.com/games/wordle/index.html"

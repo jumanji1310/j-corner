@@ -7,7 +7,7 @@ import Basics from "@/components/cube/BasicsSection";
 import FreePlay from "@/components/cube/FreePlay";
 const CubingCornerPage = () => {
   // State to track active tab
-  const [activeTab, setActiveTab] = useState("free");
+  const [activeTab, setActiveTab] = useState("basics");
 
   // Tab definitions
   const tabs = [
