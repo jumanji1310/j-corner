@@ -1,4 +1,3 @@
-import Thumbnail from "@/components/video/VideoThumbnail";
 import { Video } from "@/types/videoTypes";
 
 interface VideoCardProps {
@@ -16,7 +15,7 @@ export default function VideoCard({ video, isSelected, onClick }: VideoCardProps
           isSelected ? "ring-2 ring-accent dark:ring-dark-accent" : ""
         }`}
       >
-        <Thumbnail url={video.thumbnail} onThumbnailLoad={()=>console.log('LOADED THUMBNAIL')}/>
+        <img src={video.thumbnail} alt={video.title} className="w-full h-full" />
       </div>
       <p className="text-base font-medium mt-1 truncate text-center">
         {video.title || "Untitled"}

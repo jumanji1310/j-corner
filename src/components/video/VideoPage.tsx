@@ -8,9 +8,13 @@ import { Video, SortOption } from "@/types/videoTypes";
 
 interface VideoCarouselProps {
   videos: Video[];
+  onLoadingChange?: (isLoading: boolean) => void;
 }
 
-export default function VideoPage({ videos }: VideoCarouselProps) {
+export default function VideoPage({
+  videos,
+  onLoadingChange,
+}: VideoCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [sortBy, setSortBy] = useState<SortOption>("default");
@@ -76,6 +80,7 @@ export default function VideoPage({ videos }: VideoCarouselProps) {
               poster={currentVideo?.thumbnail}
               controls
               autoPlay
+              onLoadedData={() => onLoadingChange && onLoadingChange(false)}
             />
           </div>
 

@@ -16,11 +16,11 @@ export default function VideoCarousel({
     <>
       {videos.map((video) => (
         <VideoCard
-          key={video.id}
+          key={video.title}
           video={video}
-          isSelected={video.id === currentVideo?.id}
+          isSelected={video.title === currentVideo?.title}
           onClick={() => {
-            const newIndex = videos.findIndex((v) => v.id === video.id);
+            const newIndex = videos.findIndex((v) => v.title === video.title);
             onSelectVideo(newIndex);
           }}
         />

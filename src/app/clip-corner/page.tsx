@@ -3,26 +3,36 @@
 import LoadingScreen from "@/components/LoadingScreen";
 import VideoPage from "@/components/video/VideoPage";
 import { useEffect, useState } from "react";
-
+import { Video } from "@/types/videoTypes";
 export default function ClipCornerPage() {
-  const [videos, setVideos] = useState<formattedVideo[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [videos, setVideos] = useState<Video[]>([]);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [isFirstVideoLoading, setIsFirstVideoLoading] = useState(true);
 
-  interface VideoObject {
-    key: string;
-    version: string;
-    uploaded: string | number;
+  interface Metadata {
+    SourceFile: string;
+    EncodingTime: string;
   }
-  interface formattedVideo {
-    id: string;
-    title: string;
-    date: string;
-    url: string;
-    thumbnail: string;
-  }
+
+  // Parse non-standard date format: 2025:03:17 18:39:47+11:00
+  const parseCustomDate = (dateStr: string) => {
+    // Extract components from the string
+    const [datePart, timePart] = dateStr.split(" ");
+    const [year, month, day] = datePart.split(":");
+
+    // Extract time and timezone
+    const timeMatch = timePart.match(/(\d+):(\d+):(\d+)([+-]\d+:\d+)/);
+    if (!timeMatch) return new Date(); // Return current date if format is invalid
+
+    const [_, hours, minutes, seconds, timezone] = timeMatch;
+
+    // Create ISO-compatible date string
+    const isoDate = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${timezone}`;
+    return new Date(isoDate);
+  };
 
   useEffect(() => {
-    fetch("https://video-worker.ngjunjie13.workers.dev/list")
+    fetch("https://www.cdn.jumanji.work/metadata.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -30,32 +40,50 @@ export default function ClipCornerPage() {
         return res.json();
       })
       .then((data) => {
-        const formattedVideos = data.objects.map((video: VideoObject) => {
+        console.log("Fetched metadata:", data);
+        const formattedVideos = data.map((object: Metadata) => {
           return {
-            // url: `https://video-worker.ngjunjie13.workers.dev/${video.key}`,
-            url: `https://www.cdn.jumanji.work/${video.key}`, //getting the video from the CDN directly
-            id: video.version,
-            title: video.key
-              .replace(/\.mp4$/, "")
+            url: `https://www.cdn.jumanji.work/${object.SourceFile}`, //getting the video from the CDN directly
+            title: object.SourceFile.replace(/\.mp4$/, "")
               .replace(/_/g, " ")
               .replace(/^\w/, (c: string) => c.toUpperCase()),
-            thumbnail: `https://pub-8988b870abc545d5a220580864500877.r2.dev/${video.key}`, // Add a default thumbnail or modify as needed
-            date: new Date(video.uploaded).toLocaleString(),
+            thumbnail: `https://www.cdn.jumanji.work/thumbnails/${object.SourceFile.replace(
+              /\.mp4$/,
+              ".jpg"
+            )}`,
+            date: parseCustomDate(object.EncodingTime).toLocaleString("en-AU", {
+              dateStyle: "long",
+              timeStyle: "short",
+            }),
           };
         });
-        console.log("Response:", formattedVideos);
+        console.log("Videos:", formattedVideos);
         setVideos(formattedVideos);
-        setIsLoading(false);
+        setIsVideoLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching videos:", err);
-        setIsLoading(false);
+        setIsVideoLoading(false);
+        setIsFirstVideoLoading(false);
       });
   }, []);
 
-  return isLoading ? (
-    <LoadingScreen src="/Loading.gif" />
-      ) : (
-    <VideoPage videos={videos} />
+  // Show loading overlay if either data is not loaded or video is still loading
+  const showLoadingOverlay = isVideoLoading || isFirstVideoLoading;
+
+  return (
+    <div className="relative">
+      {/* Always render VideoPage once we have data */}
+      {!isVideoLoading && (
+        <VideoPage videos={videos} onLoadingChange={setIsFirstVideoLoading} />
+      )}
+
+      {/* Loading overlay that disappears when everything is ready */}
+      {showLoadingOverlay && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background dark:bg-dark-background">
+          <LoadingScreen src="/Loading.gif" />
+        </div>
+      )}
+    </div>
   );
 }
