@@ -19,7 +19,7 @@ const CubingCornerPage = () => {
   ];
 
   return (
-    <div className="h-[90vh] p-4 bg-background dark:bg-dark-background text-text dark:text-dark-text">
+    <div className="min-h-[90vh] p-4 bg-background dark:bg-dark-background text-text dark:text-dark-text">
       {/* Tab Navigation */}
       <div className="flex flex-wrap border-b border-primary dark:border-dark-primary">
         {tabs.map((tab) => (
