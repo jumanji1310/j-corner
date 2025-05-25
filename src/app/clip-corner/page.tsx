@@ -24,7 +24,7 @@ export default function ClipCornerPage() {
     const timeMatch = timePart.match(/(\d+):(\d+):(\d+)([+-]\d+:\d+)/);
     if (!timeMatch) return new Date(); // Return current date if format is invalid
 
-    const [_, hours, minutes, seconds, timezone] = timeMatch;
+    const [, hours, minutes, seconds, timezone] = timeMatch;
 
     // Create ISO-compatible date string
     const isoDate = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${timezone}`;
