@@ -2,10 +2,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
-
+import { useTheme } from "next-themes";
 export default function Navbar() {
   const pathname = usePathname();
-  
+  const { theme } = useTheme();
+
   const isActive = (path: string) => {
     return pathname === path;
   };
@@ -98,7 +99,15 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
+      <div className="w-40 flex items-center justify-between">
+        <img 
+            src={theme === 'dark' ? 'icons/github-mark.png' : 'icons/github-mark-white.png'}
+            alt="GitHub"
+            className="w-12 h-12 cursor-pointer"
+            onClick={() => window.open('https://github.com/jumanji1310/j-corner', '_blank')}
+        />
       <ThemeToggle />
+      </div>
     </nav>
   );
 }
