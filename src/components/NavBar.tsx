@@ -2,15 +2,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
-import { useTheme } from "next-themes";
+import GitHubLink from "./GithubLink";
 export default function Navbar() {
   const pathname = usePathname();
-  const { theme } = useTheme();
-
+  
   const isActive = (path: string) => {
     return pathname === path;
   };
-  
+
   return (
     <nav className="h-[10vh] bg-primary dark:bg-dark-primary py-2 px-8 shadow-lg flex justify-between items-center text-text dark:text-dark-text text-2xl">
       <div className="max-w-7xl flex items-center justify-between">
@@ -20,7 +19,11 @@ export default function Navbar() {
             <li>
               <Link
                 href="/"
-                className={`${isActive('/') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
+                className={`${
+                  isActive("/")
+                    ? "text-accent dark:text-dark-accent font-bold"
+                    : "hover:text-background dark:hover:text-dark-background"
+                }`}
               >
                 Home
               </Link>
@@ -28,7 +31,11 @@ export default function Navbar() {
             <li>
               <Link
                 href="/clip-corner"
-                className={`${isActive('/clip-corner') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
+                className={`${
+                  isActive("/clip-corner")
+                    ? "text-accent dark:text-dark-accent font-bold"
+                    : "hover:text-background dark:hover:text-dark-background"
+                }`}
               >
                 Clip Corner
               </Link>
@@ -36,7 +43,11 @@ export default function Navbar() {
             <li>
               <Link
                 href="/cubing-corner"
-                className={`${isActive('/cubing-corner') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
+                className={`${
+                  isActive("/cubing-corner")
+                    ? "text-accent dark:text-dark-accent font-bold"
+                    : "hover:text-background dark:hover:text-dark-background"
+                }`}
               >
                 Cubing Corner
               </Link>
@@ -44,7 +55,11 @@ export default function Navbar() {
             <li>
               <Link
                 href="/music-corner"
-                className={`${isActive('/music-corner') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
+                className={`${
+                  isActive("/music-corner")
+                    ? "text-accent dark:text-dark-accent font-bold"
+                    : "hover:text-background dark:hover:text-dark-background"
+                }`}
               >
                 Music Corner
               </Link>
@@ -88,10 +103,26 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-                        <li>
+            <li>
+              <Link
+                href="/skin-viewer"
+                className={`${
+                  isActive("/skin-viewer")
+                    ? "text-accent dark:text-dark-accent font-bold"
+                    : "hover:text-background dark:hover:text-dark-background"
+                }`}
+              >
+                Skin Viewer
+              </Link>
+            </li>
+            <li>
               <Link
                 href="/dev-diary"
-                className={`${isActive('/dev-diary') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
+                className={`${
+                  isActive("/dev-diary")
+                    ? "text-accent dark:text-dark-accent font-bold"
+                    : "hover:text-background dark:hover:text-dark-background"
+                }`}
               >
                 Dev Diary
               </Link>
@@ -100,14 +131,10 @@ export default function Navbar() {
         </div>
       </div>
       <div className="w-40 flex items-center justify-between">
-        <img 
-            src={theme === 'dark' ? 'icons/github-mark.png' : 'icons/github-mark-white.png'}
-            alt="GitHub"
-            className="w-12 h-12 cursor-pointer"
-            onClick={() => window.open('https://github.com/jumanji1310/j-corner', '_blank')}
-        />
-      <ThemeToggle />
+        <GitHubLink />
+        <ThemeToggle />
       </div>
     </nav>
   );
 }
+
