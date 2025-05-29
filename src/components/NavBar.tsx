@@ -1,7 +1,15 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  
+  const isActive = (path: string) => {
+    return pathname === path;
+  };
+  
   return (
     <nav className="h-[10vh] bg-primary dark:bg-dark-primary py-2 px-8 shadow-lg flex justify-between items-center text-text dark:text-dark-text text-2xl">
       <div className="max-w-7xl flex items-center justify-between">
@@ -11,7 +19,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/"
-                className="hover:text-background dark:hover:text-dark-background"
+                className={`${isActive('/') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
               >
                 Home
               </Link>
@@ -19,7 +27,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/clip-corner"
-                className="hover:text-background dark:hover:text-dark-background"
+                className={`${isActive('/clip-corner') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
               >
                 Clip Corner
               </Link>
@@ -27,7 +35,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/cubing-corner"
-                className="hover:text-background dark:hover:text-dark-background"
+                className={`${isActive('/cubing-corner') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
               >
                 Cubing Corner
               </Link>
@@ -35,7 +43,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/music-corner"
-                className="hover:text-background dark:hover:text-dark-background"
+                className={`${isActive('/music-corner') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
               >
                 Music Corner
               </Link>
@@ -78,6 +86,14 @@ export default function Navbar() {
                   </Link>
                 </li>
               </ul>
+            </li>
+                        <li>
+              <Link
+                href="/dev-diary"
+                className={`${isActive('/dev-diary') ? 'text-accent dark:text-dark-accent font-bold' : 'hover:text-background dark:hover:text-dark-background'}`}
+              >
+                Dev Diary
+              </Link>
             </li>
           </ul>
         </div>
