@@ -1,0 +1,109 @@
+{
+  "entries": [
+    {
+      "title": "The start of the journey",
+      "date": "8th of May, 2025",
+      "content": "Just finished dinner. Time to get started. Started with an idea to make a website with an initial idea to host a clip-corner of sorts. Got an initial React NextJs project setup and default page setup along with Tailwindcss. This will be a long and fun ride hehe."
+    },
+    {
+      "title": "Navigation bar and deployment",
+      "date": "9th of May, 2025",
+      "content": "Back at it again. The first thing I need is a navigation bar component in case I want to add routes and more pages later. Let's just add a simple extra page for cubing-corner for now. Looking good. Now I need to deploy it somewhere live with a custom domain. Remembered I still have a jumanji.work domain that I bought to test stuff last year. Will use that with Vercel to deploy a live site. Required changing my Cloudflare DNS record to point to Vercel. It's all working as expected very happy. Ah it's 11pm, time to play League with Jovana. Great progress will continue on, lots of motivation atm."
+    },
+    {
+      "title": "Clip corner and video storage",
+      "date": "10th of May, 2025",
+      "content": "Saturday lots of time. First gonna start by cleaning up unnecessary file to start on a clean slate. Let's add some dummy text for the cubing-corner page for now to populate it. Also adding a video player and carousel of sorts to it. It works, has buttons to go between videos and used free online videos to test it. Now need a way to store my shadowplay videos online. Compared between Amazon S3 and Cloudflare R2 object storage. R2 has a generous 10gb per month should be enough. Uploaded 3 clips as test and created a new video-worker repo to handle the R2 bucket requests. Was a pain to get wrangler CLI working but end of the day got a working endpoint to use and get a list of all the video titles to craft the direct link to the videos stored. Looking amazing so far, very proud of the progress yay."
+    },
+    {
+      "title": "CORS errors and video carousel",
+      "date": "11th of May, 2025",
+      "content": "Came from from being out at Mother's day celebration, will have the rest of the night. First thing is to connect the video carousel to the R2 storage videos. Encountered a CORS error but adding a wrapper around the Response fixed it. Added a home page to Navbar, a sort by feature for the clips and a dummy loading screen component. Everything working, need to finish off the thumbnails for the video carousel currently missing. Lots more work to go"
+    },
+    {
+      "title": "Video thumbnails and Kanban board",
+      "date": "12th of May, 2025",
+      "content": "Working on getting video thumbnails to work. Tried freezing a frame and get the canvas from it. This is more annoying than I thought, not much progress but it's ok I'll get it eventually. Gonna play League and sleep early for work tomorrow."
+    },
+    {
+      "title": "Pixel art loading screen and dropdowns",
+      "date": "13th of May, 2025",
+      "content": "Just got back from office work day. Got the thumbnail working with canvas, a bit glitchy and slow but gets the job done. Added Kanban board extension on Vscode to keep track of all of my ideas. This feels great to sort my tasks into tickets and tick them off. Also added scrolling for the video carousel. Need to start looking into my idea of a pixel art loading screen. Thinking of a Pilee bird featured one since Jovana loves it."
+    },
+    {
+      "title": "Pixel animation software and X dles",
+      "date": "14th of May, 2025",
+      "content": "Looking into good pixel animation softwares. Seems like Piskel and Aseprite are great options. Aseprite is paid but found a torrent for it. Watched videos for like an hour to learn crash course on how to use it. Played around with it for a bit but damn is pixel animation difficult. Respect for animators. Also added a new dropdown in navbar to show the X dles link to loldle, octordle and wordle. Tried implementing iframes for all of them but encountering restrictions from embedding so just gonna link to them. Great new tool discovered can't wait to do more animation."
+    },
+    {
+      "title": "Pixel art loading bar and debugging",
+      "date": "15th of May, 2025",
+      "content": "Finished off a basic working load bar pixel art and exported it into a gif. Implemented it into some pages and it looks great. Can't wait for the final Pilee version when I get around to it. Spent soo much time debugging why grids didn't work in the clip corner page and the whole layout. Will continue another day"
+    },
+    {
+      "title": "Clip corner finally working",
+      "date": "16th of May, 2025",
+      "content": "Pushed the large commit to finally fix the clip corner and everything working as expected it looks so good. Styled the Navbar a bit and then added a nice font I found called Lato. Reelly happy with the progress but hopped off to spam games with Jovana since it's a Friday. Yippee it's all coming together can't wait to show her."
+    },
+    {
+      "title": "Theme toggle and AnimCube3",
+      "date": "17th of May, 2025",
+      "content": "Another Saturday, gonna have lots of time to work on it hehe. Started off by creating a theme toggle with our Discord icons as the toggle to switch between. Watched a lot of videos on colour design and maximising contrast. Played around with a tool called Realtime colours and discovered the working colour theme. I made a blueish theme for mine and a pinkish theme for Jovana. Used conditional styling to apply theme across entire website. Added a dummy music-corner for now. Now that clip corner is done let's focus on the cubing corner. I need some sort of way to display a rendered Rubik's cube so I can teach the steps and make it reusable otherwise it's a hassle. Scoured through soo many online implementations finally ended up with AnimCube3 which is a library that has everything I need. Had to fix the import to support Typescript and got a POC going. A lot of work done today and very satisfied."
+    },
+    {
+      "title": "Context provider and next-themes",
+      "date": "18th of May, 2025",
+      "content": "Extracted the theme to be a context provider so that other child components can use the theme for different uses. Got OLL Part 1 and Part 2 instructions finished, spent ages customising styled the AnimCube3 component to be prettier and tinkering with the docs. Replaced the custom Theme provider with a library called next-themes. Lots of content update today great way to end the weekend."
+    },
+    {
+      "title": "F2L and PLL sections",
+      "date": "19th of May, 2025",
+      "content": "WFH day. Spent the time working on the main steps of the cubing corner. The F2L, PLL sections are now under progress. Discovered some whitespace issues on some of the pages and need to investigate. Jovana got on early tonight so I stopped and played with her for the rest of the night."
+    },
+    {
+      "title": "Cubing corner almost done",
+      "date": "20th of May, 2025",
+      "content": "Finished off all the main steps of the cubing corner. Also added images for turn notation so most of the cubing corner is done."
+    },
+    {
+      "title": "Drinks and dinner",
+      "date": "21st of May, 2025",
+      "content": "Went out for drinks + dinner with Jovana so didn't have time to work on it by the time I got back home. Just a gaming night. Little break from the project."
+    },
+    {
+      "title": "Tabs and freeplay",
+      "date": "22nd of May, 2025",
+      "content": "Adds tabs for the cubing corner page and also a the finished notation page and an additional freeplay page section for a sandbox to play around with the cube. Fixed some other whitespace and eslint error. Annoying errors all round and finished at 2am."
+    },
+    {
+      "title": "Friday gaming",
+      "date": "23rd of May, 2025",
+      "content": "Friday yay. Not much work done today after work played A LOT of games with Jovana till like 5am. another break day."
+    },
+    {
+      "title": "Davin's house party",
+      "date": "24th of May, 2025",
+      "content": "Davin's house party day. Worked a little bit in the afternoon just fixing some small UI changes and studying more pixel animations. Also went through a lot of videos to find funny ones and sort them. Need to find a way to extract metadata from the original video as the dates are wrong."
+    },
+    {
+      "title": "Recovery day and thumbnails",
+      "date": "25th of May, 2025",
+      "content": "Recovery day and used the entire day working on it. Refactored videos to use image thumbnails instead of canvas by generating a script to generate metadata and also get a frame from the video as image to be uploaded to R2. Got thumbnails working now and clip corner is insanely fast, very happy with the progress."
+    },
+    {
+      "title": "Discord icons and Lol skin viewer",
+      "date": "26th of May, 2025",
+      "content": "Experimenting with the discord icons to replace cursors and pointers in the page to further personalise it. Had trouble getting it to work but was a URL issue. Got it to work finally with Tailwind and need to replace with Pixel art later. Went on Aseprite and experimented a bit with it to see how I can get Pilee as a cursor. Progress woo!"
+    },
+    {
+      "title": "Lol skin viewer and theme switch",
+      "date": "27th of May, 2025",
+      "content": "Had the idea to implement a Lol skin viewer into a new page for Jovana to browse in game model of skins. Got the iframe working just need to clean it up. Good progress. Also need to add a theme switch to light for Jovana pink theme and dark for mine somehow. No time to do it went to play League. Idea worked :)"
+    },
+    {
+      "title": "Vertical timeline and dev diary",
+      "date": "28th of May, 2025",
+      "content": "Napped too much today, only a few hours to work on it. Researched a bunch of vertical timeline components so I could add in these dev diary entries as a way to reflect. Found react-vertical-timeline-component which worked reelly well and had an aesthetic scroll wheel. Tested and immediately works. Just need to make it pretty and add content now."
+    }
+  ]
+}
