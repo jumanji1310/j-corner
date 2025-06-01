@@ -5,6 +5,8 @@ import PLL from "@/components/cube/PllSection";
 import F2L from "@/components/cube/F2LSection";
 import Basics from "@/components/cube/BasicsSection";
 import FreePlay from "@/components/cube/FreePlay";
+import CubeTimer from "@/components/cube/CubeTimer";
+
 const CubingCornerPage = () => {
   // State to track active tab
   const [activeTab, setActiveTab] = useState("basics");
@@ -16,6 +18,7 @@ const CubingCornerPage = () => {
     { id: "oll", label: "OLL - Final layer Orientation" },
     { id: "pll", label: "PLL - Final Layer Permutation" },
     { id: "free", label: "Free Play" },
+    { id: "timer", label: "Cube Timer" },
   ];
 
   return (
@@ -44,6 +47,7 @@ const CubingCornerPage = () => {
         {activeTab === "oll" && <OLL />}
         {activeTab === "pll" && <PLL />}
         {activeTab === "free" && <FreePlay />}
+        {activeTab === "timer" && <CubeTimer />}
       </div>
     </div>
   );
