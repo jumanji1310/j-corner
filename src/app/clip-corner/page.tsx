@@ -44,15 +44,17 @@ export default function ClipCornerPage() {
         const formattedVideos = data.map((object: Metadata) => {
           return {
             url: `https://www.cdn.jumanji.work/${object.SourceFile}`, //getting the video from the CDN directly
-            title: object.SourceFile.replace(/\.mp4$/, "")
-              .replace(/_/g, " ")
-              .replace(/^\w/, (c: string) => c.toUpperCase()),
+            title: object.SourceFile.split("/")
+              .pop() // Get the part after the last '/'
+              ?.replace(/\.mp4$/, "") // Remove .mp4 extension
+              .replace(/_/g, " ") // Replace underscores with spaces
+              .replace(/^\w/, (c: string) => c.toUpperCase()), // Capitalize first letter
             thumbnail: `https://www.cdn.jumanji.work/thumbnails/${object.SourceFile.replace(
               /\.mp4$/,
               ".jpg"
-            )}`,
+            ).replace(/^videos\//, "")}`,
             date: parseCustomDate(object.EncodingTime).toLocaleString("en-AU", {
-              dateStyle: "long",
+              dateStyle: "medium",
               timeStyle: "short",
             }),
           };
