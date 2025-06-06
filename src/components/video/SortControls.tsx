@@ -1,4 +1,5 @@
 import { SortOption } from "@/types/videoTypes";
+import { MoveDown, MoveUp } from "lucide-react";
 
 interface SortControlsProps {
   sortBy: SortOption;
@@ -27,26 +28,26 @@ export default function SortControls({
           Default
         </button>
         <button
-          className={`px-3 py-1.5 rounded-md text-center ${
+          className={`px-3 py-1.5 rounded-md text-center flex items-center ${
             sortBy.startsWith("title")
               ? "bg-accent dark:bg-dark-accent"
               : "bg-primary dark:bg-dark-primary hover:bg-accent dark:hover:bg-dark-accent"
           }`}
           onClick={() => onToggleSort("title")}
         >
-          Title {sortBy === "title-asc" && "↑"}
-          {sortBy === "title-desc" && "↓"}
+          Title {sortBy === "title-asc" && <MoveUp size="1rem" strokeWidth={3}/>}
+          {sortBy === "title-desc" && <MoveDown size="1rem" strokeWidth={3}/>}
         </button>
         <button
-          className={`px-3 py-1.5 rounded-md text-center ${
+          className={`px-3 py-1.5 rounded-md text-center flex items-center ${
             sortBy.startsWith("date")
               ? "bg-accent dark:bg-dark-accent"
               : "bg-primary dark:bg-dark-primary hover:bg-accent dark:hover:bg-dark-accent"
           }`}
           onClick={() => onToggleSort("date")}
         >
-          Recent {sortBy === "date-asc" && "↑"}
-          {sortBy === "date-desc" && "↓"}
+          Recent {sortBy === "date-asc" && <MoveUp size="1rem" strokeWidth={3}/>}
+          {sortBy === "date-desc" && <MoveDown size="1rem" strokeWidth={3}/>}
         </button>
       </div>
     </div>
