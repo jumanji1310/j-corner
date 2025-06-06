@@ -1,5 +1,5 @@
-import { ChevronLeft, ChevronRight } from "../Chevron";
 import { Video } from "@/types/videoTypes";
+import { ArrowBigLeft, ArrowBigRight } from 'lucide-react';
 
 interface VideoNavigationProps {
   video: Video;
@@ -20,7 +20,10 @@ export default function VideoNavigation({ video, onNext, onPrev }: VideoNavigati
           className="p-2 rounded-md bg-primary dark:bg-dark-primary text-text dark:text-dark-text hover:bg-secondary dark:hover:bg-dark-secondary flex items-center justify-center"
           aria-label="Previous video"
         >
-          <ChevronLeft  /> 
+          <ArrowBigLeft 
+            size="2.5rem"
+            strokeWidth="2.5"
+          />
           <span className="ml-2">Previous</span>
         </button>
 
@@ -30,7 +33,10 @@ export default function VideoNavigation({ video, onNext, onPrev }: VideoNavigati
           aria-label="Next video"
         >
           <span className="mr-2">Next</span> 
-          <ChevronRight  />
+          <ArrowBigRight 
+            size="2.5rem"
+            strokeWidth="2.5"
+          />
         </button>
       </div>
     </>
