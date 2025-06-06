@@ -104,6 +104,47 @@
       "title": "Vertical timeline and dev diary",
       "date": "28th of May, 2025",
       "content": "Napped too much today, only a few hours to work on it. Researched a bunch of vertical timeline components so I could add in these dev diary entries as a way to reflect. Found react-vertical-timeline-component which worked reelly well and had an aesthetic scroll wheel. Tested and immediately works. Just need to make it pretty and add content now."
+    },
+    {
+      "title": "Timeline implementation and Github links",
+      "date": "29th of May, 2025",
+      "content": "Implemented the timeline for the dev diary page and populated it with content up to date to today, made active page highlighted in the navbar and added Github links to the repo as a clickable icon. Lots of solid features implemented and dev diary looks great as a dive into the journey of this project."
+    },
+    {
+      "title": "League skin viewer and CORS fixes",
+      "date": "30th of May, 2025",
+      "content": "Friday after work, worked on getting the League skin viewer embedded into the website and fixing a unch of CORS error. The theming was very annoying but at the end managed to solve it but reelised it doesn't propogate to other clicked pages. Gonna revert the changes later but Jovana is back yay so we gonna play games now."
+    },
+    {
+      "title": "Skin viewer iframe issues",
+      "date": "31th of May, 2025",
+      "content": "Saturday again lots of time. Worked on trying to fix the propagation issue into iframes. Ended up just not caring about the theme and just doing a basic embed of the Skin viewer. Started looking into a possible implementation of a Rubik's cube timer but didn't get much time Jovana hopped on time for League hehe."
+    },
+    {
+      "title": "Cube timer implementation",
+      "date": "1st of Jun, 2025",
+      "content": "Got a whole Sunday to work on this. Worked on getting the cube timing tab of the cubing corner finished. Got inspired by CubeStat web component and spent the night finishing the timer off. It's very responsive and looks great. Can't wait to show Jovana and have her try it. Maybe she'll get a PB with this. The rest of the night just sorting out my R2 cloud storage to have folders so I can start categorising videos."
+    },
+    {
+      "title": "Categories dropdown filter",
+      "date": "2nd of Jun, 2025",
+      "content": "Got home from working in office straight into it. Implemented a categories dropdown filter and got it working fairly quickly so quite happy with it."
+    },
+    {
+      "title": "Performance review",
+      "date": "3rd of Jun, 2025",
+      "content": "Was working on performance review till 12am. Didn't have time to work on project at all. Just played League afterwards."
+    },
+    {
+      "title": "Break day",
+      "date": "4th of Jun, 2025",
+      "content": "Worked in office today, after work got home and napped, wasn't in the mood to work on it today either."
+    },
+    {
+      "title": "Another break day",
+      "date": "5th of Jun, 2025",
+      "content": "3rd day in a row not working on it. Might just be a little break from it from all the work stress and performance review lately. Not a big deal, will get back to it tomorrow."
     }
+    
   ]
 }

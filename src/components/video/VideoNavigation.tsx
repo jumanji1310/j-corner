@@ -21,8 +21,8 @@ export default function VideoNavigation({ video, onNext, onPrev }: VideoNavigati
           aria-label="Previous video"
         >
           <ArrowBigLeft 
-            size="2.5rem"
-            strokeWidth="2.5"
+            size={"2.5rem"}
+            strokeWidth={2.5}
           />
           <span className="ml-2">Previous</span>
         </button>

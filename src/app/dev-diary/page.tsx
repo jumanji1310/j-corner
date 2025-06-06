@@ -13,6 +13,11 @@ interface DiaryEntry {
   subtitle?: string;
   content: string;
 }
+const TextIcon = ({ text }: { text: string }) => (
+  <div className="flex items-center justify-center w-full h-full text-text dark:text-dark-text font-bold text-lg">
+    {text}
+  </div>
+);
 
 export default function DevDiaryPage() {
   const [diaryEntries, setDiaryEntries] = useState<DiaryEntry[]>([]);
@@ -68,6 +73,7 @@ export default function DevDiaryPage() {
                 theme == "dark" ? "black" : "white"
               }, inset 0 1px #00000014, 0 2px 0 4px #0000000d`,
             }}
+            icon={<TextIcon text={`Day ${index + 1}`} />}
             textClassName="text-text dark:text-dark-text"
           >
             <h3 className="vertical-timeline-element-title text-lg font-extrabold underline">
