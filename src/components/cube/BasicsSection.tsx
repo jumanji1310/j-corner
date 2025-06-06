@@ -17,7 +17,7 @@ export default function Basics() {
         </p>
       </div>
       <div className="flex flex-row justify-center">
-        <img src="turns.jpg" className="w-[40vw]" />
+        <img src="cube/turns.jpg" className="w-[40vw]" />
       </div>
       <div className="flex flex-row justify-center">
         <p className="text-xl text-left w-[40vw] ">
@@ -26,7 +26,7 @@ export default function Basics() {
         </p>
       </div>
       <div className="flex flex-row justify-center">
-        <img src="turns2.jpg" className="w-[40vw]" />
+        <img src="cube/turns2.jpg" className="w-[40vw]" />
       </div>
       <div className="flex flex-row justify-center">
         <p className="text-xl text-left w-[40vw] ">
@@ -35,7 +35,7 @@ export default function Basics() {
         </p>
       </div>
       <div className="flex flex-row justify-center">
-        <img src="turns3.jpg" className="w-[40vw]" />
+        <img src="cube/turns3.jpg" className="w-[40vw]" />
       </div>
       <h2 className="text-2xl font-bold text-center text-accent dark:text-dark-accent">
         Wide turns
@@ -47,7 +47,7 @@ export default function Basics() {
         </p>
       </div>
       <div className="flex flex-row justify-center">
-        <img src="turns4.jpg" className="w-[40vw]" />
+        <img src="cube/turns4.jpg" className="w-[40vw]" />
       </div>
       <h2 className="text-2xl font-bold text-center text-accent dark:text-dark-accent">
         Cube rotations
@@ -58,7 +58,7 @@ export default function Basics() {
         </p>
       </div>
       <div className="flex flex-row justify-center">
-        <img src="turns5.jpg" className="w-[25vw]" />
+        <img src="cube/turns5.jpg" className="w-[25vw]" />
       </div>
       <h2 className="text-2xl font-bold text-center text-accent dark:text-dark-accent">
         Slice moves
@@ -71,7 +71,7 @@ export default function Basics() {
         </p>
       </div>
       <div className="flex flex-row justify-center">
-        <img src="turns6.jpg" className="w-[20vw]" />
+        <img src="cube/turns6.jpg" className="w-[20vw]" />
       </div>
     </div>
   );

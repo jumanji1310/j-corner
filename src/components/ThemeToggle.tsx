@@ -23,7 +23,7 @@ export default function ThemeToggle() {
   return (
     <button onClick={toggleTheme}>
       <img
-        src={theme === "dark" ? "pilee.png" : "jumanji.jpeg"}
+        src={theme === "dark" ? "icons/pilee.png" : "icons/jumanji.jpeg"}
         alt="Theme toggle"
         className="w-15 h-15 rounded-full"
       />

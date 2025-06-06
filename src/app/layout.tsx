@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
         <html lang="en" suppressHydrationWarning className={moderustic.className}>
       <head>
-        <Script src="/AnimCube3.js" strategy="beforeInteractive" />
+        <Script src="cube/AnimCube3.js" strategy="beforeInteractive" />
       </head>
       <body>
         <ThemeProvider attribute="class">
