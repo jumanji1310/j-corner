@@ -1,5 +1,5 @@
 "use client";
-
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import Link from "next/link";
