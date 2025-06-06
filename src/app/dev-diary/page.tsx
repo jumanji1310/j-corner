@@ -67,6 +67,9 @@ export default function DevDiaryPage() {
             date={entry.date}
             dateClassName="text-text dark:text-dark-text !opacity-100 !text-xl "
             iconStyle={{
+              width: "4rem",
+              height: "4rem",
+              marginLeft: "-2rem",
               background:
                 theme == "dark" ? "rgb(240, 68, 160)" : "rgb(57, 157, 247)",
               boxShadow: `0 0 0 2px ${
