@@ -15,6 +15,10 @@
   --color-dark-secondary: rgb(232, 145, 191);
   --color-dark-accent: rgb(240, 68, 160);
 
+  --cursor-custom: url(/icons/thresh-cursor.png), auto;
+  --cursor-dark-custom: url(/icons/pilee-cursor.png), auto;
+  --pointer-custom: url(/icons/thresh-pointer.png), pointer;
+  --pointer-dark-custom: url(/icons/pilee-pointer.png), pointer;
 }
 :root {
   --background: #ffffff;
@@ -31,4 +35,43 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Custom cursor styles */
+
+/* Set default cursor for everything */
+html {
+  cursor: var(--cursor-custom);
+}
+
+/* Dark mode cursor */
+html.dark {
+  cursor: var(--cursor-dark-custom);
+  
+}
+
+
+/* Apply pointer cursor to interactive elements */
+a,
+img,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+select,
+.cursor-pointer {
+  cursor: var(--pointer-custom) !important;
+}
+
+
+/* Dark mode pointer cursor */
+.dark a,
+.dark img,
+.dark button,
+.dark [role="button"],
+.dark input[type="submit"],
+.dark input[type="button"],
+.dark select,
+.dark .cursor-pointer {
+  cursor: var(--pointer-dark-custom) !important;
 }
