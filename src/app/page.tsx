@@ -29,7 +29,7 @@ export default function HomePage() {
         <LoadingScreen src="/Loading.gif" />
       ) : (
         <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text h-[90vh]">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             {/* Hero Section */}
             <div className="text-center mb-12 py-10">
               <h1 className="text-5xl md:text-7xl font-bold mb-4 text-accent dark:text-dark-accent">

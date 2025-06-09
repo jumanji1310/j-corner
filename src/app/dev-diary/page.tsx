@@ -40,9 +40,25 @@ export default function DevDiaryPage() {
   }, []);
 
   return (
-    <div className="bg-background dark:bg-dark-background">
-      <div className="w-3/4 mx-auto text-center py-6">
-        This idea sparked from Jovana mentioning wanting to be able to watch my clips. I previously used Streamables but they have an expiry date and thought it would be a great chance to develop my fullstack skills and also make something nice and personal for Jovana. 
+    <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text">
+      <div className="w-4/7 mx-auto py-6">
+        <div className="flex mb-6">
+          <h1 className="text-3xl font-bold">Development Diary</h1>
+        </div>
+        The idea for this website project sparked from when Jovana mentioned
+        wanting to watch my clips that I capture when we game and chill. I
+        previously used Streamables to share these clips to friends but they
+        have an expiry date and thought this was also a great opportunity to
+        develop my fullstack skills and also make something nice and personal
+        for Jovana. I know she will love it!
+        <br />
+        <br />
+        This dev diary was created to track my design choices, thoughts, wins
+        and struggles as I progress along the project. Jovana loves reading my
+        journals and my thought process so she’ll reelly enjoy reading through
+        and following along with my long journey. I hope this diary will also be
+        a great reflect on my decision and design choices when I finish the
+        project. Have fun reading through it Jovana ❤️!
       </div>
       <VerticalTimeline
         lineColor={theme == "dark" ? "black" : "white"}
@@ -65,7 +81,7 @@ export default function DevDiaryPage() {
               border: "#0000",
             }}
             date={entry.date}
-            dateClassName="text-text dark:text-dark-text !opacity-100 !text-xl "
+            dateClassName="!opacity-100 !text-xl "
             iconStyle={{
               width: "4rem",
               height: "4rem",
@@ -77,7 +93,6 @@ export default function DevDiaryPage() {
               }, inset 0 1px #00000014, 0 2px 0 4px #0000000d`,
             }}
             icon={<TextIcon text={`Day ${index + 1}`} />}
-            textClassName="text-text dark:text-dark-text"
           >
             <h3 className="vertical-timeline-element-title text-lg font-extrabold underline">
               {entry.title}

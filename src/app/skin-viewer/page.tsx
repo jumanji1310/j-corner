@@ -9,14 +9,11 @@ export default function ChampionModelViewer() {
 
   return (
     <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text ">
-      <div className="container mx-auto py-8">
-        <div className="flex justify-between items-center mb-6">
+      <div className="container mx-auto py-6">
           <h1 className="text-3xl font-bold">
             League of Legends Champion and Skin models viewer
           </h1>
-        </div>
-
-        <div className="relative w-full" style={{ height: "80vh" }}>
+        <div className="relative h-[75vh] w-full mt-6">
           <iframe
             src={iframeUrl}
             className={`w-full h-full ${
