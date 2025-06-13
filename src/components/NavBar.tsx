@@ -6,6 +6,7 @@ import {
   Box,
   Gamepad2,
   House,
+  Images,
   Music,
   NotebookPen,
   Shirt,
@@ -50,6 +51,19 @@ export default function Navbar() {
               >
                 <TvMinimalPlay size={iconSize} strokeWidth={iconStrokeWidth} />{" "}
                 Clip Corner
+              </Link>
+            </li>
+                        <li>
+              <Link
+                href="/memory-corner"
+                className={`flex flex-col items-center ${
+                  isActive("/memory-corner")
+                    ? "text-accent dark:text-dark-accent font-bold"
+                    : "hover:text-background dark:hover:text-dark-background"
+                }`}
+              >
+                <Images size={iconSize} strokeWidth={iconStrokeWidth} />{" "}
+                Memory Corner
               </Link>
             </li>
             <li>

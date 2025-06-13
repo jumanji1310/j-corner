@@ -18,7 +18,7 @@ export default function VideoCard({ video, isSelected, onClick }: VideoCardProps
         <img src={video.thumbnail} alt={video.title} className="w-full h-full" />
       </div>
       <p className="text-base font-medium mt-1 truncate text-center">
-        {video.title} <span className="text-text/50 dark:text-dark-text/50">({video.date.split(',')[0]})</span>
+        {video.title} <span className="text-text/50 dark:text-dark-text/50">({video.date.split(',')[0]},{video.date.split(',')[1]})</span>
       </p>
     </div>
   );

@@ -31,45 +31,51 @@ export default function ClipCornerPage() {
     return new Date(isoDate);
   };
 
-  useEffect(() => {
-    fetch("https://www.cdn.jumanji.work/metadata.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        console.log("Fetched metadata:", data);
-        const formattedVideos = data.map((object: Metadata) => {
-          return {
-            url: `https://www.cdn.jumanji.work/${object.SourceFile}`, //getting the video from the CDN directly
-            title: object.SourceFile.split("/")
-              .pop() // Get the part after the last '/'
-              ?.replace(/\.mp4$/, "") // Remove .mp4 extension
-              .replace(/_/g, " ") // Replace underscores with spaces
-              .replace(/^\w/, (c: string) => c.toUpperCase()), // Capitalize first letter
-            thumbnail: `https://www.cdn.jumanji.work/thumbnails/${object.SourceFile.replace(
-              /\.mp4$/,
-              ".jpg"
-            ).replace(/^videos\//, "")}`,
-            date: parseCustomDate(object.EncodingTime).toLocaleString("en-AU", {
-              dateStyle: "medium",
-              timeStyle: "short",
-            }),
-          };
-        });
-        console.log("Videos:", formattedVideos);
-        setVideos(formattedVideos);
-        setIsVideoLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching videos:", err);
-        setIsVideoLoading(false);
-        setIsFirstVideoLoading(false);
+useEffect(() => {
+  async function fetchVideos() {
+    try {
+      // Fetch metadata
+      const res = await fetch("https://www.cdn.jumanji.work/metadata.json");
+      
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      
+      const data = await res.json();
+      console.log("Fetched metadata:", data);
+      
+      // Process the data
+      const formattedVideos = data.map((object: Metadata) => {
+        return {
+          url: `https://www.cdn.jumanji.work/${object.SourceFile}`,
+          title: object.SourceFile.split("/")
+            .pop()
+            ?.replace(/\.mp4$/, "")
+            .replace(/_/g, " ")
+            .replace(/^\w/, (c: string) => c.toUpperCase()),
+          thumbnail: `https://www.cdn.jumanji.work/thumbnails/${object.SourceFile.replace(
+            /\.mp4$/,
+            ".jpg"
+          ).replace(/^videos\//, "")}`,
+          date: parseCustomDate(object.EncodingTime).toLocaleString("en-US", {
+            dateStyle: "medium",
+            timeStyle: "short",
+          }),
+        };
       });
-  }, []);
-
+      
+      console.log("Videos:", formattedVideos);
+      setVideos(formattedVideos);
+    } catch (err) {
+      console.error("Error fetching videos:", err);
+      setIsFirstVideoLoading(false);
+    } finally {
+      setIsVideoLoading(false);
+    }
+  }
+  
+  fetchVideos();
+}, []);
   // Show loading overlay if either data is not loaded or video is still loading
   const showLoadingOverlay = isVideoLoading || isFirstVideoLoading;
 
