@@ -3,7 +3,7 @@ import AlgoCard from "./AlgoCard";
 
 export default function F2L() {
   return (
-    <div className="flex flex-col space-y-8 p-4">
+    <div className="flex flex-col space-y-8 p-4 h-[80vh] overflow-y-auto">
       <h1 className="text-3xl font-bold text-center text-accent dark:text-dark-accent">
         Solving the Cross (PLL Part 1)
       </h1>

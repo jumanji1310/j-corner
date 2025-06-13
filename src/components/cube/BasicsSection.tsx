@@ -2,7 +2,7 @@
 
 export default function Basics() {
   return (
-    <div className="flex flex-col space-y-8 p-4">
+    <div className="flex flex-col space-y-8 p-4 h-[80vh] overflow-y-auto">
       <h1 className="text-3xl font-bold text-center text-accent dark:text-dark-accent">
         The Basic terminology
       </h1>
