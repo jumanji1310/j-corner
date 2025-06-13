@@ -42,9 +42,9 @@ export default function DevDiaryPage() {
   return (
     <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text">
       <div className="w-4/7 mx-auto py-6">
-        <div className="flex mb-6">
-          <h1 className="text-3xl font-bold">Development Diary</h1>
-        </div>
+        <h1 className="mb-6 text-3xl font-bold text-center">
+          Development Diary
+        </h1>
         The idea for this website project sparked from when Jovana mentioned
         wanting to watch my clips that I capture when we game and chill. I
         previously used Streamables to share these clips to friends but they
