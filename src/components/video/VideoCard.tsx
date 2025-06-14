@@ -11,7 +11,7 @@ export default function VideoCard({ video, isSelected, onClick }: VideoCardProps
     <div className="mb-2">
       <div
         onClick={onClick}
-        className={`relative aspect-video cursor-pointer rounded overflow-hidden ${
+        className={`aspect-video cursor-pointer rounded overflow-hidden ${
           isSelected ? "ring-2 ring-accent dark:ring-dark-accent" : ""
         }`}
       >

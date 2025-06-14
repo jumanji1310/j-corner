@@ -116,7 +116,7 @@ export default function VideoPage({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 rounded-lg">
         {/* Left side - Video container */}
         <div className="lg:col-span-2 flex flex-col h-[85vh]">
-          <div className="relative bg-primary/20 dark:bg-dark-primary/20 rounded-lg overflow-hidden grow border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
+          <div className="bg-primary/20 dark:bg-dark-primary/20 rounded-lg overflow-hidden grow border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
               <video
                 ref={videoRef}
                 src={currentVideo.url}

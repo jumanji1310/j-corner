@@ -80,7 +80,7 @@ useEffect(() => {
   const showLoadingOverlay = isVideoLoading || isFirstVideoLoading;
 
   return (
-    <div className="relative">
+    <div>
       {/* Always render VideoPage once we have data */}
       {!isVideoLoading && (
         <VideoPage videos={videos} onLoadingChange={setIsFirstVideoLoading} />
@@ -88,7 +88,7 @@ useEffect(() => {
 
       {/* Loading overlay that disappears when everything is ready */}
       {showLoadingOverlay && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background dark:bg-dark-background">
+        <div className="fixed top-[10vh] left-0 right-0 bottom-0 z-50 flex items-center justify-center bg-background dark:bg-dark-background">
           <LoadingScreen src="/Loading.gif" />
         </div>
       )}

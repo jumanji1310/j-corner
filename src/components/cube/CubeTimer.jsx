@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // Main component that replaces cube-stat
 export default function CubeTimer(){
   return (
-    <div className="relative rounded-lg overflow-hidden border flex h-[78vh] w-full bg-background dark:bg-dark-background text-text dark:text-dark-text flex-row border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
+    <div className="rounded-lg overflow-hidden border flex h-[78vh] w-full bg-background dark:bg-dark-background text-text dark:text-dark-text flex-row border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
       <div className="flex flex-col w-3/4 items-center justify-center text-center gap-10">
         <div>
           <h1 className="text-7xl text-accent dark:text-dark-accent">Rubik's Cube Timer</h1>
@@ -97,7 +97,7 @@ function StatTimer() {
         {time}
       </span>
       <button  
-        className={`relative rounded-lg px-10 py-1 text-2xl uppercase transition-colors duration-150 hover:bg-white/20 dark:hover:bg-black/20 ${isActive ? 'bg-white/30 dark:bg-black/30' : 'bg-accent/50 dark:bg-dark-accent/50'}`}
+        className={`rounded-lg px-10 py-1 text-2xl uppercase transition-colors duration-150 hover:bg-white/20 dark:hover:bg-black/20 ${isActive ? 'bg-white/30 dark:bg-black/30' : 'bg-accent/50 dark:bg-dark-accent/50'}`}
         onClick={startStop}
         onMouseDown={(e) => e.preventDefault()}
       >
@@ -166,7 +166,7 @@ const StatGroup = ({ data }) => {
 
   // Helper component for each stat box
   const StatBox = ({ label, value, highlight = false }) => (
-    <div className="relative w-full">
+    <div className="w-full">
       <div className={`text-lg font-bold uppercase ${highlight ? "text-accent dark:text-dark-accent" : ""}`}>
         {label}
       </div>

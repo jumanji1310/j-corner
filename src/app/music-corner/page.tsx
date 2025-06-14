@@ -2,7 +2,7 @@
 
 export default function MusicBasics() {
   return (
-    <div className="min-h-[90vh] p-4 bg-background dark:bg-dark-background text-text dark:text-dark-text">
+    <div className="h-[90vh] p-4 bg-background dark:bg-dark-background text-text dark:text-dark-text overflow-y-auto">
       <div className="flex flex-col space-y-8 p-4">
         <h1 className="text-3xl font-bold text-center text-accent dark:text-dark-accent">
           Music Theory Basics
