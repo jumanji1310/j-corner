@@ -3,7 +3,6 @@ import * as React from "react";
 import Masonry from "react-masonry-css";
 import { useEffect, useState } from "react";
 import PolaroidCard from "@/components/PolaroidCard";
-import { title } from "process";
 
 // Helper function to format date strings
 function formatDateString(dateStr: string) {
