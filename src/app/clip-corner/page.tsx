@@ -88,9 +88,7 @@ useEffect(() => {
 
       {/* Loading overlay that disappears when everything is ready */}
       {showLoadingOverlay && (
-        <div className="fixed top-[10vh] left-0 right-0 bottom-0 z-50 flex items-center justify-center bg-background dark:bg-dark-background">
           <LoadingScreen src="/Loading.gif" />
-        </div>
       )}
     </div>
   );

@@ -37,8 +37,7 @@ export default function HomePage() {
                 Welcome to J-Corner
               </h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-                A personal project created for Jovana with cubing tutorials,
-                gaming clips, and more.
+                A personal project created for Jovana.
               </p>
             </div>
 

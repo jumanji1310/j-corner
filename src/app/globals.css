@@ -15,10 +15,10 @@
   --color-dark-secondary: rgb(232, 145, 191);
   --color-dark-accent: rgb(240, 68, 160);
 
-  --cursor-custom: url(/icons/thresh-cursor.png), auto;
-  --cursor-dark-custom: url(/icons/pilee-cursor.png), auto;
-  --pointer-custom: url(/icons/thresh-pointer.png), pointer;
-  --pointer-dark-custom: url(/icons/pilee-pointer.png), pointer;
+  --cursor-custom: url(/icons/thresh-cursor.png) 3 3, auto;
+  --cursor-dark-custom: url(/icons/pilee-cursor.png) 3 3, auto;
+  --pointer-custom: url(/icons/thresh-pointer.png) 3 3, pointer;
+  --pointer-dark-custom: url(/icons/pilee-pointer.png) 3 3, pointer;
 }
 :root {
   --background: #ffffff;
