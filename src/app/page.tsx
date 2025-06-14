@@ -32,8 +32,8 @@ export default function HomePage() {
         <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text h-[90vh] overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4">
             {/* Hero Section */}
-            <div className="text-center mb-12 py-10">
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-accent dark:text-dark-accent">
+            <div className="text-center mb-12 pt-20">
+              <h1 className="text-5xl md:text-7xl font-bold m-4 text-accent dark:text-dark-accent">
                 Welcome to J-Corner
               </h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -138,7 +138,7 @@ export default function HomePage() {
                 <h2 className="text-2xl font-bold text-center mb-3">X-dles</h2>
 
                 {/* Instead of hiding/showing, use absolute positioning for the links */}
-                <div className="relative h-[80px] flex items-center">
+                <div className="relative flex items-center">
                   <p className="text-center w-full duration-300 group-hover:opacity-0">
                     Daily word games and puzzles we enjoy playing.
                   </p>
