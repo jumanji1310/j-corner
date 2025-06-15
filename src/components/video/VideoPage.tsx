@@ -19,6 +19,15 @@ export default function VideoPage({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [sortBy, setSortBy] = useState<SortOption>("default");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [isInitialVideo, setIsInitialVideo] = useState(true);
+
+  // Don't autoplay the first video
+  const skipInitialVideo = () => {
+    if (videoRef.current && isInitialVideo) {
+      videoRef.current.pause();
+      setIsInitialVideo(false);
+    }
+  };
 
   // Extract unique categories from video URLs
   const categories = useMemo(() => {
@@ -124,7 +133,10 @@ export default function VideoPage({
                 poster={currentVideo.thumbnail}
                 controls
                 autoPlay
-                onLoadedData={() => onLoadingChange && onLoadingChange(false)}
+                onLoadedData={(e) => {
+                  onLoadingChange && onLoadingChange(false);
+                  skipInitialVideo();
+                }}
               />
           </div>
 

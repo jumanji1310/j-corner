@@ -3,11 +3,14 @@ import * as React from "react";
 import Masonry from "react-masonry-css";
 import { useEffect, useState } from "react";
 import PolaroidCard from "@/components/PolaroidCard";
+import LoadingScreen from "@/components/LoadingScreen";
 
 // Helper function to format date strings
 function formatDateString(dateStr: string) {
   // For strings in format "2025.06.08-16.26.53"
-  const match = dateStr.match(/(\d{4})\.(\d{2})\.(\d{2})-(\d{2})\.(\d{2})\.(\d{2})/);
+  const match = dateStr.match(
+    /(\d{4})\.(\d{2})\.(\d{2})-(\d{2})\.(\d{2})\.(\d{2})/
+  );
 
   if (!match) return dateStr; // Return original if no match
 
@@ -27,9 +30,12 @@ function formatDateString(dateStr: string) {
 }
 
 export default function MemoryCornerPage() {
-  const [items, setItems] = useState<Array<{ id: number; title: string; src: string }>>([]);
+  const [items, setItems] = useState<
+    Array<{ id: number; title: string; src: string }>
+  >([]);
   const [isImageLoading, setIsImageLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(0);
+  const [animationPlaying, setAnimationPlaying] = useState(true);
 
   useEffect(() => {
     async function fetchImages() {
@@ -90,32 +96,36 @@ export default function MemoryCornerPage() {
     800: 2,
   };
 
+  const showLoadingOverlay = isImageLoading || animationPlaying;
+  const onEnded = () => {
+    setAnimationPlaying(false);
+  };
+
   return (
     <div className="bg-background dark:bg-dark-background p-4 h-[90vh]">
-      <h1 className="text-4xl font-bold text-center mb-8 text-accent dark:text-dark-accent">
-        Memory Corner
-      </h1>
-
-      {isImageLoading && (
-        <div className="fixed top-[10vh] bottom-0 left-0 right-0 z-50 flex justify-center items-center bg-background dark:bg-dark-background">
-          <div className="text-accent dark:text-dark-accent text-xl">
-            Loading memories... {loadedImages}/{items.length}
-          </div>
-        </div>
+      {showLoadingOverlay && (
+        <>
+          <LoadingScreen src="/icons/pilee-loading.mp4" onEnded={onEnded} />
+        </>
       )}
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="flex mx-auto h-[80vh] w-[80vw] bg-primary/20 dark:bg-dark-primary/20 text-center overflow-y-auto overflow-x-hidden p-4 rounded-lg"
-      >
-        {items.map((item) => (
-          <PolaroidCard
-            key={item.id.toString()}
-            src={item.src}
-            caption={formatDateString(item.title)}
-            onImageLoaded={handleImageLoaded}
-          />
-        ))}
-      </Masonry>
+      <div className={`${showLoadingOverlay ? "invisible" : "visible"}`}>
+        <h1 className="text-4xl font-bold text-center mb-8 text-accent dark:text-dark-accent">
+          Memory Corner
+        </h1>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="flex mx-auto h-[80vh] w-[80vw] bg-primary/20 dark:bg-dark-primary/20 text-center overflow-y-auto overflow-x-hidden p-4 rounded-lg"
+        >
+          {items.map((item) => (
+            <PolaroidCard
+              key={item.id.toString()}
+              src={item.src}
+              caption={formatDateString(item.title)}
+              onImageLoaded={handleImageLoaded}
+            />
+          ))}
+        </Masonry>
+      </div>
     </div>
   );
 }

@@ -8,6 +8,11 @@ export default function ClipCornerPage() {
   const [videos, setVideos] = useState<Video[]>([]);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [isFirstVideoLoading, setIsFirstVideoLoading] = useState(true);
+  const [animationPlaying, setAnimationPlaying] = useState(true);
+
+  const onEnded = () => {
+    setAnimationPlaying(false);
+  };
 
   interface Metadata {
     SourceFile: string;
@@ -77,18 +82,18 @@ useEffect(() => {
   fetchVideos();
 }, []);
   // Show loading overlay if either data is not loaded or video is still loading
-  const showLoadingOverlay = isVideoLoading || isFirstVideoLoading;
+  const showLoadingOverlay = isVideoLoading || isFirstVideoLoading || animationPlaying;
 
   return (
     <div>
       {/* Always render VideoPage once we have data */}
       {!isVideoLoading && (
+        <div className={`${showLoadingOverlay ? "invisible" : "visible"}`}>
         <VideoPage videos={videos} onLoadingChange={setIsFirstVideoLoading} />
-      )}
-
+      </div>)}
       {/* Loading overlay that disappears when everything is ready */}
       {showLoadingOverlay && (
-          <LoadingScreen src="/Loading.gif" />
+        <LoadingScreen src="/icons/pilee-loading.mp4" onEnded={onEnded}/>
       )}
     </div>
   );
