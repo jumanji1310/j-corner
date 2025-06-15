@@ -40,7 +40,7 @@ export default function DevDiaryPage() {
   }, []);
 
   return (
-    <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text">
+    <div className="bg-background dark:bg-dark-background text-text dark:text-dark-text overflow-y-auto h-[90vh]">
       <div className="w-4/7 mx-auto py-6">
         <h1 className="mb-6 text-3xl font-bold text-center">
           Development Diary
@@ -57,8 +57,8 @@ export default function DevDiaryPage() {
         and struggles as I progress along the project. Jovana loves reading my
         journals and my thought process so she’ll reelly enjoy reading through
         and following along with my long journey. I hope this diary will also be
-        a great reflect on my decision and design choices when I finish the
-        project. Have fun reading through it Jovana ❤️!
+        a great reflection on my decision and design choices when I finish the
+        project. Have fun reading through it Jojo ❤️!
       </div>
       <VerticalTimeline
         lineColor={theme == "dark" ? "black" : "white"}
