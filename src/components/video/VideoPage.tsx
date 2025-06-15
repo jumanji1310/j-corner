@@ -134,7 +134,9 @@ export default function VideoPage({
                 controls
                 autoPlay
                 onLoadedData={() => {
-                  onLoadingChange && onLoadingChange(false);
+                  if (onLoadingChange) {
+                    onLoadingChange(false);
+                  }
                   skipInitialVideo();
                 }}
               />
