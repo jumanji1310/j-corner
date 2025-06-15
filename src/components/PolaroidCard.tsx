@@ -20,9 +20,9 @@ export default function PolaroidCard({
     <div
       style={{ 
         transform: isHovered ? 'rotate(0deg) scale(1.5)' : `rotate(${randomRotation}deg)`,
-        transition: 'all 0.35s'
+        transition: 'all 0.35s',
       }}
-      className="m-4 shadow-lg/50 grayscale hover:filter-none"
+      className="relative m-4 shadow-lg/50 z-1 hover:z-50"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

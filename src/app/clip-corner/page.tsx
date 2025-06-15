@@ -22,6 +22,16 @@ export default function ClipCornerPage() {
     EncodingTime: string;
   }
 
+  // Fisher-Yates shuffle algorithm
+  const shuffleArray = <T,>(array: T[]): T[] => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
   // Parse non-standard date format: 2025:03:17 18:39:47+11:00
   const parseCustomDate = (dateStr: string) => {
     // Extract components from the string
@@ -72,8 +82,11 @@ useEffect(() => {
         };
       });
       
-      console.log("Videos:", formattedVideos);
-      setVideos(formattedVideos);
+      // Shuffle videos before setting state
+      const shuffledVideos = shuffleArray(formattedVideos) as Video[];
+      
+      console.log("Shuffled videos:", shuffledVideos);
+      setVideos(shuffledVideos);
     } catch (err) {
       console.error("Error fetching videos:", err);
       setIsFirstVideoLoading(false);

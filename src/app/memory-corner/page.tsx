@@ -30,6 +30,16 @@ function formatDateString(dateStr: string) {
   });
 }
 
+// Fisher-Yates shuffle algorithm
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function MemoryCornerPage() {
   const [items, setItems] = useState<
     Array<{ id: number; title: string; src: string }>
@@ -66,7 +76,10 @@ export default function MemoryCornerPage() {
           }
         );
 
-        setItems(imageItems);
+        // Shuffle the images before setting them in state
+        const shuffledImages = shuffleArray<{ id: number; title: string; src: string }>(imageItems);
+        console.log("Shuffled images:", shuffledImages);
+        setItems(shuffledImages);
 
         // Don't set isImageLoading to false here - we'll wait for images to load
       } catch (error) {
