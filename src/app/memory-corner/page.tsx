@@ -4,6 +4,7 @@ import Masonry from "react-masonry-css";
 import { useEffect, useState } from "react";
 import PolaroidCard from "@/components/PolaroidCard";
 import LoadingScreen from "@/components/LoadingScreen";
+import { useTheme } from "next-themes";
 
 // Helper function to format date strings
 function formatDateString(dateStr: string) {
@@ -36,6 +37,7 @@ export default function MemoryCornerPage() {
   const [isImageLoading, setIsImageLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(0);
   const [animationPlaying, setAnimationPlaying] = useState(true);
+  const { theme } = useTheme();
 
   useEffect(() => {
     async function fetchImages() {
@@ -104,9 +106,9 @@ export default function MemoryCornerPage() {
   return (
     <div className="bg-background dark:bg-dark-background p-4 h-[90vh]">
       {showLoadingOverlay && (
-        <>
-          <LoadingScreen src="/icons/pilee-loading.mp4" onEnded={onEnded} />
-        </>
+        <div className="fixed top-[10vh] left-0 right-0 bottom-0 bg-background dark:bg-dark-background flex items-center justify-center">
+          <LoadingScreen src={`${theme === "dark" ? "/icons/pilee-loading.mp4" : "/icons/thresh-loading.mp4"}`} onEnded={onEnded}/>
+        </div>
       )}
       <div className={`${showLoadingOverlay ? "invisible" : "visible"}`}>
         <h1 className="text-4xl font-bold text-center mb-8 text-accent dark:text-dark-accent">

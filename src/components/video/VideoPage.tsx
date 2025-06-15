@@ -133,7 +133,7 @@ export default function VideoPage({
                 poster={currentVideo.thumbnail}
                 controls
                 autoPlay
-                onLoadedData={(e) => {
+                onLoadedData={() => {
                   onLoadingChange && onLoadingChange(false);
                   skipInitialVideo();
                 }}

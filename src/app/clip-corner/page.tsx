@@ -4,11 +4,14 @@ import LoadingScreen from "@/components/LoadingScreen";
 import VideoPage from "@/components/video/VideoPage";
 import { useEffect, useState } from "react";
 import { Video } from "@/types/videoTypes";
+import { useTheme } from "next-themes";
+
 export default function ClipCornerPage() {
   const [videos, setVideos] = useState<Video[]>([]);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [isFirstVideoLoading, setIsFirstVideoLoading] = useState(true);
   const [animationPlaying, setAnimationPlaying] = useState(true);
+  const { theme } = useTheme();
 
   const onEnded = () => {
     setAnimationPlaying(false);
@@ -93,7 +96,9 @@ useEffect(() => {
       </div>)}
       {/* Loading overlay that disappears when everything is ready */}
       {showLoadingOverlay && (
-        <LoadingScreen src="/icons/pilee-loading.mp4" onEnded={onEnded}/>
+        <div className="fixed top-[10vh] left-0 right-0 bottom-0 bg-background dark:bg-dark-background flex items-center justify-center">
+          <LoadingScreen src={`${theme === "dark" ? "/icons/pilee-loading.mp4" : "/icons/thresh-loading.mp4"}`} onEnded={onEnded}/>
+        </div>
       )}
     </div>
   );

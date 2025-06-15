@@ -6,7 +6,7 @@ export default function LoadingScreen({
   onEnded?: () => void;
 }) {
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-1/2 h-[80vh] w-[80vh] mt-[5vh] bg-background dark:bg-dark-background z-50">
+    <div className="h-[80vh] w-[80vh]">
       <video
         src={src}
         autoPlay
