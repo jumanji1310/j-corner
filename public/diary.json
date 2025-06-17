@@ -144,7 +144,67 @@
       "title": "Another break day",
       "date": "5th of Jun, 2025",
       "content": "3rd day in a row not working on it. Might just be a little break from it from all the work stress and performance review lately. Not a big deal, will get back to it tomorrow."
+    },
+    {
+      "title": "Back on track",
+      "date": "6th of Jun, 2025",
+      "content": "Back onto more project after a stressful work week. Tested out some libraries like Radix UI after seeing it while helping Jovana. Ended up adding Lucide icons and replaced icons where possible and now Navbar uses icons too. Github icon also got an upgrade. The Navbar is looking very pretty now. Also cleaned up folder and added basic music theory to the music-corner. Afterwards, created a basic pilee pixel sprite with Aseprite for cursor. Very productive night."
+    },
+    {
+      "title": "Pixel art pointers",
+      "date": "7th of Jun, 2025",
+      "content": "Tired after whole day of shopping. Worked on pilee pixel arts and pointer. Had some trouble getting the colours and shape but finished making it peck when it becomes a pointer. It looks reelly good but took a lot of effort. Happy about the progess and learning today."
+    },
+    {
+      "title": "Fun and motivation",
+      "date": "8th of Jun, 2025",
+      "content": "Got home after badminton and chilling with Jovana. Had so much fun today and gave me motivation boost to finish this project it's been so enjoyable, I've learned a lot of skills and different tools and best of all it's for my bestie who I love dearly KEEP GOINGG AHHH. Drew up a pixel Thresh lantern and also a pointer that glows to show the change. The cursors are all implemented for now and they look reelly good."
+    },
+    {
+      "title": "Polaroid memories",
+      "date": "9th of Jun, 2025",
+      "content": "Home after whole day of shopping again at Chadstone, trying out a new masonry layout with polaroid replica cards for our fun photo moments memory-corner. Got the polaroid working and the masonry layout going after testing a few. Was experimenting with hover effects but went to play League."
+    },
+    {
+      "title": "Memory corner effects",
+      "date": "10th of Jun, 2025",
+      "content": "Home after a fun day in the office, worked on getting hover effects working with grayscale and rotations/scale all working. Just need to collate images and upload to R2 storage now. Maybe need to resize images to be smaller"
+    },
+    {
+      "title": "Image processing",
+      "date": "11th of Jun, 2025",
+      "content": "Rough day, mentally exhausted, great switchup to keep working on this. Worked on getting the memory corner content by syncing images, choosing the images I want to display on here and renaming all of them to the relevant dates taken due to EXIF data differences. Also generated image file names index for them all."
+    },
+    {
+      "title": "Memory corner styling",
+      "date": "12th of Jun, 2025",
+      "content": "After a fun drinking night out with Jovana's group, not much time to work on it. Just finished off the look of memory corner, uploaded a solid amount of starting images and got populated all the page. It looks reelly good. Just need to fix scrolling and some other smaller stuff. Also got a nice cursive font going to replicate hand written text on polaroids."
+    },
+    {
+      "title": "Fixing scrolling",
+      "date": "13th of Jun, 2025",
+      "content": "Got home late, not much time again. Finished off memory corner after fixing the dates for the title. Fixed a few scrolling in other pages too and the whole site looks reelly good. Will need to update the hero for memory corner now. Will have to dedicate some time to go through images I wanna show here, maybe a filter to show different types of photos etc."
+    },
+    {
+      "title": "Layout improvements",
+      "date": "14th of Jun, 2025",
+      "content": "Added memory corner to the hero page and fixed it to look reelly nice. Fixed a lot of spacing for different pages and scrolling as well. For cursor, added a new X to show where the hotspot is for clicking. Spent the rest of the night just animation a loading screen for walking Pilee pixel. A lot of work but this is the last stretch. Keep going!!!"
+    },
+    {
+      "title": "Loading animations",
+      "date": "15th of Jun, 2025",
+      "content": "Sunday, didn't feel in the mood for anything, spent my time just working on this. Experimented with loading with gifs, SVG frames and finally video which worked. Got the pilee loading screen done with lots of layers animating the flowers, the clouds and pilee walking movement too. It was a lot of work but the end result looks amazing. For my theme, I used a thresh lantern that would pulse and glow. Both of them were implemented into the clip and memory corner and it looks amazing. Can't wait for her to see all of this. Big progress today."
+    },
+    {
+      "title": "Shuffle and UI improvements",
+      "date": "16th of Jun, 2025",
+      "content": "Made all videos and images shuffled by default, fixed the hovering of polaroids and also removed greyscale from images. Spent a lot of time going through photos to find all the ones I want to include. This will be a lengthy process, the END IS NEAR! KEEP GOING!"
+    },
+    {
+      "title": "Final touches",
+      "date": "17th of Jun, 2025",
+      "content": "Worked on formatting all the videos, compressing it with Handbrake, renaming it and getting the website to work with the new formats. Also added sorting and filtering option to the memory corner. I think it's ready!"
     }
-    
   ]
 }
+ 
