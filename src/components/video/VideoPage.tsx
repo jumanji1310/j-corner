@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useMemo } from "react";
-import SortControls from "@/components/video/SortControls";
+import SortControlsVideo from "@/components/video/SortControls";
 import VideoCarousel from "@/components/video/VideoCarousel";
 import VideoNavigation from "@/components/video/VideoNavigation";
 import { Video, SortOption } from "@/types/videoTypes";
@@ -171,7 +171,7 @@ export default function VideoPage({
 
           {/* Sort controls with indicators */}
           <div className="bg-primary/20 dark:bg-dark-primary/20 mb-4 p-4 rounded-lg border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
-            <SortControls
+            <SortControlsVideo
               sortBy={sortBy}
               onSortDefault={() => setSortBy("default")}
               onToggleSort={toggleSort}

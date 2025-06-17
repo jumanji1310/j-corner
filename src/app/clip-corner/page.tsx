@@ -53,7 +53,7 @@ useEffect(() => {
   async function fetchVideos() {
     try {
       // Fetch metadata
-      const res = await fetch("https://www.cdn.jumanji.work/metadata.json");
+      const res = await fetch("https://www.cdn.jumanji.work/video_metadata.json");
       
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
