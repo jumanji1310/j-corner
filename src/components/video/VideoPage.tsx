@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import SortControlsVideo from "@/components/video/SortControls";
 import VideoCarousel from "@/components/video/VideoCarousel";
 import VideoNavigation from "@/components/video/VideoNavigation";
-import { Video, SortOption } from "@/types/videoTypes";
+import { Video, SortOptionVideo } from "@/types/videoTypes";
 
 interface VideoCarouselProps {
   videos: Video[];
@@ -17,7 +17,7 @@ export default function VideoPage({
 }: VideoCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [sortBy, setSortBy] = useState<SortOption>("default");
+  const [sortBy, setSortBy] = useState<SortOptionVideo>("dateAdded-desc");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isInitialVideo, setIsInitialVideo] = useState(true);
 
@@ -59,11 +59,11 @@ export default function VideoPage({
   };
 
   // Toggle sort function
-  const toggleSort = (type: "title" | "date") => {
+  const toggleSort = (type: "title" | "date" | "dateAdded") => {
     setSortBy((current) => {
-      if (current === `${type}-asc`) return `${type}-desc` as SortOption;
-      if (current === `${type}-desc`) return `${type}-asc` as SortOption;
-      return `${type}-asc` as SortOption;
+      if (current === `${type}-asc`) return `${type}-desc` as SortOptionVideo;
+      if (current === `${type}-desc`) return `${type}-asc` as SortOptionVideo;
+      return `${type}-asc` as SortOptionVideo;
     });
   };
 
@@ -87,8 +87,7 @@ export default function VideoPage({
 
   // Sort filtered videos
   const getSortedVideos = () => {
-    if (sortBy === "default") return filteredVideos;
-
+    console.log("Sorting videos by:", sortBy);
     return [...filteredVideos].sort((a, b) => {
       if (sortBy === "title-asc") {
         return a.title.localeCompare(b.title);
@@ -98,6 +97,12 @@ export default function VideoPage({
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       } else if (sortBy === "date-desc") {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
+      } else if (sortBy === "dateAdded-asc") {
+        console.log( a.dateAdded, b.dateAdded);
+        console.log(new Date(a.dateAdded).getTime(), new Date(b.dateAdded).getTime());
+        return new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime();
+      } else if (sortBy === "dateAdded-desc") {
+        return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime();
       }
       return 0;
     });
@@ -173,7 +178,6 @@ export default function VideoPage({
           <div className="bg-primary/20 dark:bg-dark-primary/20 mb-4 p-4 rounded-lg border border-primary dark:border-dark-primary shadow-lg/50 shadow-secondary dark:shadow-dark-secondary">
             <SortControlsVideo
               sortBy={sortBy}
-              onSortDefault={() => setSortBy("default")}
               onToggleSort={toggleSort}
             />
           </div>
