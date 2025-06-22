@@ -128,20 +128,20 @@ export default function HomePage() {
 
               <div className="absolute inset-0 flex justify-center items-center gap-3 opacity-0 duration-300 group-hover:opacity-100">
                 <Link
-                  href="https://loldle.net/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-2 bg-primary dark:bg-dark-primary rounded-lg text-text dark:text-dark-text hover:bg-accent/70 dark:hover:bg-dark-accent/70 transition-colors"
-                >
-                  Loldle
-                </Link>
-                <Link
                   href="https://www.nytimes.com/games/wordle/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-2 bg-primary dark:bg-dark-primary rounded-lg text-text dark:text-dark-text hover:bg-accent/70 dark:hover:bg-dark-accent/70 transition-colors"
                 >
                   Wordle
+                </Link>
+                <Link
+                  href="https://loldle.net/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 bg-primary dark:bg-dark-primary rounded-lg text-text dark:text-dark-text hover:bg-accent/70 dark:hover:bg-dark-accent/70 transition-colors"
+                >
+                  Loldle
                 </Link>
                 <Link
                   href="https://www.britannica.com/games/octordle/daily"
