@@ -3,7 +3,7 @@ import NavBar from "@/components/NavBar"; // Adjust the path based on your proje
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { Moderustic } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const moderustic = Moderustic({
   subsets: ["latin"],
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-        <html lang="en" suppressHydrationWarning className={moderustic.className}>
+    <html lang="en" suppressHydrationWarning className={moderustic.className}>
       <head>
         <Script src="cube/AnimCube3.js" strategy="beforeInteractive" />
       </head>
@@ -24,8 +24,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <NavBar />
           {children}
-          <Analytics />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
